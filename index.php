@@ -7,4 +7,11 @@
 * Remeber: Whatever you do in any files in the project can and will be seen by any and everyone. So please, lets have some order.
 -->
 
+<head>
+	<link type="text/css" rel="stylesheet" href="stylesheet.css"/><!--This links this the stylesheet to the index-->
+</head>
+<body>
+
+</body>
+
 </html>
