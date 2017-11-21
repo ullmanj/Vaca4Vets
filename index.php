@@ -6,4 +6,5 @@
 * Back end: I don't know what to do with you yet, but it definatly does not include editing this file.
 * Remeber: Whatever you do in any files in the project can and will be seen by any and everyone. So please, lets have some order.
 -->
+<!--I ADDED THIS IN A BRANCH: NEW FETURE-->
 </html>
