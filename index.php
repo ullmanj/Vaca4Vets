@@ -6,6 +6,6 @@
 * Back end: I don't know what to do with you yet, but it definatly does not include editing this file.
 * Remeber: Whatever you do in any files in the project can and will be seen by any and everyone. So please, lets have some order.
 -->
-
+Now I am starting to understand
 </html>
 Pretend now that I am adding something somewhere else: different feture
