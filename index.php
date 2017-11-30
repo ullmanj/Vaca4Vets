@@ -11,6 +11,7 @@
 	<link type="text/css" rel="stylesheet" href="stylesheet.css"/><!--This links this the stylesheet to the index-->
 </head>
 <body>
+<!--This is where the body of the code will go (for front end)-->
 
 </body>
 
