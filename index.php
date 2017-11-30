@@ -11,9 +11,7 @@
 	<link type="text/css" rel="stylesheet" href="stylesheet.css"/><!--This links this the stylesheet to the index-->
 </head>
 <body>
-<h1>HELLO</h1>
-<h2>HELLO from Jack</h2>
-<h2>Hello from Peter</h2>
+
 </body>
 
 </html>
