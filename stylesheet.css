@@ -1,1 +1,219 @@
-/*This is the style sheet. This is indended for the front end group#/
+h2 {
+  color: white;
+  font-weight: 300;
+  padding-left: 10px;
+  padding-top: 10px;
+  font-family: 'Lato', sans-serif;
+  font-size: 40;
+
+}
+
+header {
+  background-color: #041958;
+  height: 115px;
+}
+
+footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: #041958;
+    height: 25px;
+}
+
+body.first {
+  padding: 0;
+  margin: 0;
+  background-color: #f0f2f6;
+  background-image: url(https://images.unsplash.com/photo-1509030492798-7cdeb62a335c?auto=format&fit=crop&w=1055&q=80);
+  background-repeat:no-repeat;
+  background-size: cover;
+}
+
+body.home {
+  padding: 0;
+  margin: 0;
+  background-color: #f0f2f6;
+  background-image: url(https://unsplash.com/photos/t2b1Z-jPT-w)
+  background-repeat:no-repeat;
+  background-size: cover;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  background-color: #f0f2f6;
+}
+
+p {
+  font-family: 'Lato', sans-serif;
+  word-wrap: break-word;
+}
+
+.small {
+  font-size: 20;
+  text-align: right;
+  padding-right: 10px;
+}
+
+.center {
+  text-align: center;
+}
+
+.center1 {
+  text-align:center;
+  font-weight:300;
+  padding-top: 40px;
+  color: black;
+  font-size: 40;
+}
+
+.center2 {
+  text-align:center;
+  font-weight:300;
+  color: #041958;
+  font-size: 35;
+}
+
+.left1 {
+  text-align: left;
+  font-weight:300;
+  padding-top: 40px;
+  padding-left: 100px;
+  color: black;
+  font-size: 40;
+}
+
+input {
+  font-family: 'Lato', sans-serif;
+  text-align: left;
+  padding-left:5px;
+  font-weight:300;
+  color: #9FBDDA;
+  font-size: 18;
+  height:45;
+  width:280;
+}
+
+form {
+  padding-left: 100px;
+  padding-bottom: 10px;
+  font-family: 'Lato', sans-serif;
+  font-weight: 300;
+  color: #041958;
+  font-size: 20px;
+}
+
+table.pad {
+  border: none;
+  padding-left: 100px;
+  padding-bottom: 10px;
+  font-family: 'Lato', sans-serif;
+  font-weight: 300;
+  color: #041958;
+  font-size: 20px;
+  word-wrap: break-word;
+}
+
+table.nopad {
+  border: none;
+  padding-bottom: 10px;
+  padding-left: none;
+  font-family: 'Lato', sans-serif;
+  font-weight: 300;
+  color: #041958;
+  font-size: 20px;
+  word-wrap: break-word;
+  align-items: center;
+}
+
+table.centered {
+  border: none;
+  padding-bottom: 10px;
+  padding-left: none;
+  font-family: 'Lato', sans-serif;
+  font-weight: 300;
+  color: #041958;
+  font-size: 20px;
+  word-wrap: break-word;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+td {
+  padding-right: 20px;
+}
+
+.notform {
+  padding: none;
+}
+
+.right {
+  text-align: right;
+  padding-top: 30px;
+}
+
+.signup {
+  padding-left: 100px;
+  padding-bottom: 20px;
+}
+
+img.home {
+  width: 316px;
+  height: 210px;
+  margin-bottom: 15px;
+  padding: 10px;
+  padding-left: none;
+}
+
+button {
+  border: none;
+  text-decoration: none;
+  background-color: #9FBDDA;
+  font-family: 'Lato', sans-serif;
+  font-size: 20px;
+  font-weight: 400px;
+  padding: 20px 10px;
+  border-radius: 5px;
+}
+
+button:hover {
+  background-color: #8FA5D6;
+}
+
+.padleft {
+  padding-left: 100px;
+  padding-bottom: 50px;
+}
+
+a {
+  text-decoration: underline;
+  color: #041958;
+}
+
+a:hover {
+  text-decoration: underline;
+  color: #9FBDDA;
+}
+
+a:active {
+  color: #f0f2f6;
+  text-decoration: none;
+}
+
+a.navlink {
+  color: white;
+  font-size: 20;
+  float: right;
+  text-decoration: none;
+  padding-right: 10px;
+}
+
+a.navlink:hover {
+  text-decoration: underline;
+}
+
+.notpad {
+  padding: none;
+}

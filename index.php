@@ -1,17 +1,28 @@
-<!DOCTYPE html>
 <html>
-<!--This is the index file. Meaning this is where the user will initially be directed.
-* Front end people: you should start here
-* Middle (javascript) group: I will help you make another file in order to keep your work private
-* Back end: I don't know what to do with you yet, but it definatly does not include editing this file.
-* Remeber: Whatever you do in any files in the project can and will be seen by any and everyone. So please, lets have some order.
--->
+  <head>
+    <title>Vacations for Veterans</title>
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="stylesheet.css">
+  </head>
 
-<head>
-	<link type="text/css" rel="stylesheet" href="stylesheet.css"/><!--This links this the stylesheet to the index-->
-</head>
-<body>
-<h1>This is our website</h1>
+  <header>
+    <h2>V4V</h2>
+    <p><a class="navlink" href="login.html">LOG IN</a></p>
+  </header>
+
+ <body class=first>
+   <p class=center1>Welcome to <i>Vacations for Veterans</i></p>
+   <br>
+   <p class=center2><mark style="background-color:#FFFFFF">Are you a <a href=signupVet.html>Veteran</a> or a <a href=signupVend.html>Vendor</a>?</mark></p>
 </body>
-
+<footer>
+</footer>
 </html>
+
+<!--NOTES:
+-placeholder in sign up/log in pages vs using "value"
+-LOG IN and other nav headers on the same line as V4V
+-logo to deal with
+-V4V in left corner on home page
+-remember aspect ratio for home images is 113 x 75 (times by 2.8 each atm)
+-->
