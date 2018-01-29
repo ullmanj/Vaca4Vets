@@ -2,9 +2,9 @@
 <body>
 hi
 <form method="post" enctype="multipart/form-data">
-	<input type="connect" value="Connect" name="connect">
-  	<input type="add" value="ADD" name="ADD VET">
-    <input type="dc" value="disconnect" name="Disconnect">
+	<input type="sumbit" value="Connect" name="connect">
+  	<input type="sumbit" value="ADD" name="ADD VET">
+    <input type="submit" value="disconnect" name="Disconnect">
 </form>
 </body>
 </html>
