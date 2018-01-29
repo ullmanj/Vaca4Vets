@@ -9,6 +9,7 @@ hi
 </body>
 </html>
 <?php
+echo "WORK";
 /*
 $servername = "localhost";
 $username = "root";
@@ -21,7 +22,7 @@ if (isset($_POST['connect']))
 if (isset($_POST['add'])) 
 { 
   echo "HELLLO0";
-  addToVet(0, 1, "Steven", "Rohan", "McGuilligan", "The Marines", "The President", "Oct, 2014 - Active", "1-101-101-1101", "steven@mcguilligan.net", "NEVER", "PABLOWASKILLEDBYANAXEMURDERER");
+  addToVet(1, 1, "Steven", "Rohan", "McGuilligan", "The Marines", "The President", "Oct, 2014 - Active", "1-101-101-1101", "steven@mcguilligan.net", "NEVER", "PABLOWASKILLEDBYANAXEMURDERER");
 }  
 if (isset($_POST['dc'])) 
 { 
