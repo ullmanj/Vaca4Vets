@@ -20,7 +20,7 @@ if (isset($_POST['connect']))
 }  
 if (isset($_POST['add'])) 
 { 
-  addToVet(1, "Steven", "Rohan", "McGuilligan", "The Marines", "The President", "Oct, 2014 - Active", "1-101-101-1101", "steven@mcguilligan.net", "NEVER", "PABLOWASKILLEDBYANAXEMURDERER");
+  addToVet(0, 1, "Steven", "Rohan", "McGuilligan", "The Marines", "The President", "Oct, 2014 - Active", "1-101-101-1101", "steven@mcguilligan.net", "NEVER", "PABLOWASKILLEDBYANAXEMURDERER");
 }  
 if (isset($_POST['dc'])) 
 { 
@@ -38,9 +38,9 @@ function openConnection($servername, $username, $password, $dbname)
     return true; 
 }
 //vet functions (vets)
-function addToVet($idN, $fName, $mName, $lName, $branch, $rank, $activeDates, $phoneNum, $email, $dolcu, $password){
-    $sql = "INSERT INTO vets (idN, fName, mName, lName, branch, rank, activeDates, phoneNum, email, dolcu, password)
-    VALUES ($idN, $fName, $mName, $lName, $branch, $rank, $activeDates, $phoneNum, $email, $dolcu, $password)";
+function addToVet($id $idN, $fName, $mName, $lName, $branch, $rank, $activeDates, $phoneNum, $email, $dolcu, $password){
+    $sql = "INSERT INTO vets ($id, idN, fName, mName, lName, branch, rank, activeDates, phoneNum, email, dolcu, password)
+      VALUES ($id, $idN, $fName, $mName, $lName, $branch, $rank, $activeDates, $phoneNum, $email, $dolcu, $password)";
 
     if ($conn->query($sql) === TRUE) {
         echo "New record created successfully";
