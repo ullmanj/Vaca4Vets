@@ -38,7 +38,7 @@ function openConnection($servername, $username, $password, $dbname)
     return true; 
 }
 //vet functions (vets)
-function addToVet($id $idN, $fName, $mName, $lName, $branch, $rank, $activeDates, $phoneNum, $email, $dolcu, $password){
+function addToVet($id, $idN, $fName, $mName, $lName, $branch, $rank, $activeDates, $phoneNum, $email, $dolcu, $password){
     $sql = "INSERT INTO vets ($id, idN, fName, mName, lName, branch, rank, activeDates, phoneNum, email, dolcu, password)
       VALUES ($id, $idN, $fName, $mName, $lName, $branch, $rank, $activeDates, $phoneNum, $email, $dolcu, $password)";
 
