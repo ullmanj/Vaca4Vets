@@ -41,7 +41,7 @@ function openConnection($servername, $username, $password, $dbname)
 function addToVet($id, $idN, $fName, $mName, $lName, $branch, $rank, $activeDates, $phoneNum, $email, $dolcu, $password){
     $sql = "INSERT INTO vets ($id, idN, fName, mName, lName, branch, rank, activeDates, phoneNum, email, dolcu, password)
       VALUES ($id, $idN, $fName, $mName, $lName, $branch, $rank, $activeDates, $phoneNum, $email, $dolcu, $password)";
-
+	echo "HELLLO";
     if ($conn->query($sql) === TRUE) {
         echo "New record created successfully";
         return true;
