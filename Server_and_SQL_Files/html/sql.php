@@ -7,6 +7,9 @@ $password = "briggs-test";
 $dbname = "V4V";*/
 if (isset($_POST['connect'])) 
 { 
+  echo '<script type="text/javascript">',
+     'document.getElementById("myspan").textContent="WEll";',
+     '</script>';
   if(openConnection("localhost", "root", "briggs-test", "V4V"))
   {
   	echo '<script type="text/javascript">',
