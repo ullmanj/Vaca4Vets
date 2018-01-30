@@ -1,13 +1,3 @@
-<html>
-<body>
-hi
-<form method="post" enctype="multipart/form-data">
-	<input type="submit" value="Connect" name="connect">
-  	<input type="submit" value="ADD" name="ADD VET">
-    <input type="submit" value="disconnect" name="Disconnect">
-</form>
-</body>
-</html>
 <?php
 echo "WORK";
 /*
@@ -17,7 +7,18 @@ $password = "briggs-test";
 $dbname = "V4V";*/
 if (isset($_POST['connect'])) 
 { 
-  openConnection("localhost", "root", "briggs-test", "V4V");
+  if(openConnection("localhost", "root", "briggs-test", "V4V"))
+  {
+  	echo '<script type="text/javascript">',
+     'document.getElementById("myspan").textContent="Connected";',
+     '</script>';
+  }
+  else
+  {
+    echo '<script type="text/javascript">',
+     'document.getElementById("myspan").textContent="Not Connected";',
+     '</script>';
+  }
 }  
 if (isset($_POST['add'])) 
 { 
@@ -254,4 +255,14 @@ function closeConnection()
     $conn->close();
 }
 ?>
-
+<html>
+<body>
+hi
+<form method="post" enctype="multipart/form-data">
+	<input type="submit" value="Connect" name="connect">
+  	<input type="submit" value="ADD" name="ADD VET">
+    <input type="submit" value="disconnect" name="Disconnect">
+                  <span id="myspan"> OUTPUT </span>
+</form>
+</body>
+</html>
