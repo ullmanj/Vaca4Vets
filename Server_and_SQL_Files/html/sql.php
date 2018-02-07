@@ -1,6 +1,6 @@
 <html>
 <body>
-hi
+TESTING
 <form method="post" enctype="multipart/form-data">
         <input type="submit" value="Add" name="add">
           <input type="submit" value="Print" name="printc">
