@@ -7,6 +7,7 @@ TESTING
           <br>
           <input type="text" value = "col" name="delcc">
             <br>
+            MUst put in with quotes if a string
             <input type="text" value = "val" name="delcv">
               <br>
         <input type="submit" value="Del" name="delc">
@@ -49,11 +50,9 @@ if(isset($_POST['printc']))
     }
 if(isset($_POST['delc']))
 {
-  $val = $_POST['delcv'];
   
   //add quotes around val
-  $val = "/'" . $val . "/'";
-  delRow("vets", $_POST['delcc'], $val);
+  delRow("vets", $_POST['delcc'], $_POST['delcv']);
 }
 function addToTable($table, $idN, $fName, $mName, $lName, $branch, $rank, $activeDates, $phoneNum, $email, $dolcu, $username, $password){
     $mysqli = new mysqli("localhost", "root", "briggs-test", "V4V");
