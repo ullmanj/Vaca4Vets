@@ -37,8 +37,8 @@ if (isset($_POST['add']))
 }
 if(isset($_POST['printc']))
     {
-      $array = array("idN", "first", "middle", "last");
-      selectCol("idN, first, middle, last", "vets", "", $array);
+      $array = array("idN", "first", "middle", "last", "branch", "rank");
+      selectCol("idN, first, middle, last, branch, rank", "vets", ";", $array, 6);
     }
 function addToTable($table, $idN, $fName, $mName, $lName, $branch, $rank, $activeDates, $phoneNum, $email, $dolcu, $username, $password){
     $mysqli = new mysqli("localhost", "root", "briggs-test", "V4V");
@@ -64,9 +64,9 @@ function addToTable($table, $idN, $fName, $mName, $lName, $branch, $rank, $activ
     $mysqli->close();
 }
   //* for all, commas for multiple
-  //order is optional: blank for nothing, ORDER BY row
+  //order is optional: semicolon for nothing,  ORDER BY row
   //arr is for all of the cols
-function selectCol($cols, $table, $order, $arr)
+function selectCol($cols, $table, $order, $arr, $num)
 {
   $conn = new mysqli("localhost", "root", "briggs-test", "V4V");
   // Check connection
@@ -74,17 +74,41 @@ function selectCol($cols, $table, $order, $arr)
       die("Connection failed: " . $conn->connect_error);
   } 
   
-  $sql = "SELECT " . $cols . " FROM " . $table . " " . $order;
+  $sql = "SELECT " . $cols . " FROM " . $table . $order;
   $result = $conn->query($sql);
   
   if ($result->num_rows > 0) {
       // output data of each row
       while($row = $result->fetch_assoc()) {
-        echo "id: " . $row[$arr[0]]. " - Name: " . $row[$arr[1]]. " " . $row[$arr[2]]. " " . $row[$arr[2]]."<br>";
+        for($y = 0; $y < $num; $y++)
+        {
+            echo "<b>" . $arr[$y] . "</b>: " . $row[$arr[$y]] . "<br>";
+        }
+        echo "<br>";
       }
   } else {
       echo "0 results";
   }
   $conn->close();
 }
+function delRow($table, $col, $val)
+  {
+    $conn = new mysqli("localhost", "root", "briggs-test", "V4V");
+  // Check connection
+  if ($conn->connect_error) {
+      die("Connection failed: " . $conn->connect_error);
+  } 
+  
+  // sql to delete a record
+  $sql = "DELETE FROM " . $table . " WHERE " . $col . "=" . $val;
+  
+  if ($conn->query($sql) === TRUE) {
+      echo "Record deleted successfully";
+  } else {
+      echo "Error deleting record: " . $conn->error;
+  }
+  
+  $conn->close();
+  }
+                
 ?>
