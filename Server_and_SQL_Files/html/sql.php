@@ -22,7 +22,7 @@ $dbname = "V4V";*/
 
 if (isset($_POST['add'])) 
 { 
-  if(addToTable('vets', 46, '\'Steven\'', '\'Rohan\'', '\'Mcguilligan\'', '\'Marines\'', '\'Gunnery Sergeant\'', '\'November 20, 2014 - PRESENT\'', '\'1-011-101-1000\'', '\'steven@mcguilligan.net\'', '\'NEVER\'', '\'StevenMcguilligan1\'', '\'srohan524\'')
+  if(addToTable('vets', 46, '\'Steven\'', '\'Rohan\'', '\'Mcguilligan\'', '\'Marines\'', '\'Gunnery Sergeant\'', '\'November 20, 2014 - PRESENT\'', '\'1-011-101-1000\'', '\'steven@mcguilligan.net\'', '\'NEVER\'', '\'StevenMcguilligan1\'', '\'srohan524\''))
   {
     echo '<script type="text/javascript">',
      'document.getElementById("myspan").innerHTML ="Added";',
@@ -53,7 +53,7 @@ function addToTable($table, $idN, $fName, $mName, $lName, $branch, $rank, $activ
    echo $sql . "\n";
 // $sql = "INSERT INTO persons (first_name, last_name, email) VALUES ('Peter', 'Parker', 'no')";
     //$sql = "INSERT INTO persons (first_name, last_name, email) VALUES ('gs', 'gr', 'gm')";
-    $sql = "INSERT INTO " . $table . " (idN, first, middle, last, branch, rank, activeD, phoneNum, email, dolcu, username, password) VALUES (" . $idN . ", " . $fName . ", " . $mName . ", " . $lName . ", " . $branc$
+    $sql = "INSERT INTO " . $table . " (idN, first, middle, last, branch, rank, activeD, phoneNum, email, dolcu, username, password) VALUES (" . $idN . ", " . $fName . ", " . $mName . ", " . $lName . ", " . $branch . ", " . $rank . ", " . $activeDates . ", " . $phoneNum . ", " . $email . ", " . $dolcu . ", " . $username . ", " . $password . ")";
     if($mysqli->query($sql) === true){
         echo "Records inserted successfully.";
     } else{
