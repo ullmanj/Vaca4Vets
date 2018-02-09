@@ -49,7 +49,11 @@ if(isset($_POST['printc']))
     }
 if(isset($_POST['delc']))
 {
-  delRow("vets", $_POST['delcc'], $_POST['delcv']);
+  $val = $_POST['delcv'];
+  
+  //add quotes around val
+  $val = "/'" . $val . "/'";
+  delRow("vets", $_POST['delcc'], $val);
 }
 function addToTable($table, $idN, $fName, $mName, $lName, $branch, $rank, $activeDates, $phoneNum, $email, $dolcu, $username, $password){
     $mysqli = new mysqli("localhost", "root", "briggs-test", "V4V");
@@ -123,3 +127,4 @@ function delRow($table, $col, $val)
   }
                 
 ?>
+  
