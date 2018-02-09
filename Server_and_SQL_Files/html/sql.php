@@ -3,7 +3,14 @@
 TESTING
 <form method="post" enctype="multipart/form-data">
         <input type="submit" value="Add" name="add">
-          <input type="submit" value="Print" name="printc">
+        <input type="submit" value="Print" name="printc">
+          <br>
+          <input type="text" value = "col" name="delcc">
+            <br>
+            <input type="text" value = "val" name="delcv">
+              <br>
+        <input type="submit" value="Del" name="delc">
+          
 </form>
                   <span id="myspan"> OUTPUT </span>
 </body>
@@ -40,6 +47,10 @@ if(isset($_POST['printc']))
       $array = array("idN", "first", "middle", "last", "branch", "rank");
       selectCol("idN, first, middle, last, branch, rank", "vets", ";", $array, 6);
     }
+if(isset($_POST['delc']))
+{
+  delRow("vets", $_POST['delcc'], $_POST['delcv']);
+}
 function addToTable($table, $idN, $fName, $mName, $lName, $branch, $rank, $activeDates, $phoneNum, $email, $dolcu, $username, $password){
     $mysqli = new mysqli("localhost", "root", "briggs-test", "V4V");
  
