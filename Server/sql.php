@@ -1,3 +1,17 @@
+/*
+ Tables so you know what the params are:
+ CREATE TABLE donor (idN INTEGER, amount DOUBLE, purpose VARCHAR (1000));
+
+CREATE TABLE experience (idN INTEGER, sName VARCHAR (60), address VARCHAR (100), website VARCHAR (100), description VARCHAR (1000), datesA VARCHAR (100), fees VARCHAR (100));
+
+CREATE TABLE vacHome (idN INTEGER, address VARCHAR (100), REL VARCHAR (100), description VARCHAR (1000), datesA VARCHAR (100), bedrooms INTEGER, fees VARCHAR (100));
+
+CREATE TABLE vendor (idN INTEGER, first VARCHAR (30), middle VARCHAR (30), last VARCHAR (40), typeId VARCHAR (20), phoneNum VARCHAR (30), email VARCHAR (40), active BOOLEAN, username VARCHAR (25), password VARCHAR (25));
+
+CREATE TABLE vets (idN INTEGER, first VARCHAR (30), middle VARCHAR (30), last VARCHAR (40), branch VARCHAR (30), rank VARCHAR (30), activeD VARCHAR (60), phoneNum VARCHAR (30), email VARCHAR (40), dolcu VARCHAR (20), username VARCHAR (25), password VARCHAR (25));
+ 
+ Additional Notes around the functions. Let me know if you have questions*/
+
 <html>
 <body>
 TESTING
@@ -30,10 +44,9 @@ $dbname = "V4V";*/
 if (isset($_POST['add'])) 
 {
     
-    //adds vet to table
+    //adds vet to table: input1 is the column names in order (see above), input2 is the values: strings need to be encompased by single quotes
     $input1 = "idN, first, middle, last, branch, rank, activeD, phoneNum, email, dolcu, username, password";
     $input2 = "46, 'Steven', 'Rohan', 'Mcguilligan', 'Marines', 'Gunnery Sergeant', 'November 20, 2014 - PRESENT', '1-011-101-1000', 'steven@mcguilligan.net', 'NEVER', 'StevenMcguilligan1', 'srohan524'";
-  //if(addToTable('vets', 46, '\'Steven\'', '\'Rohan\'', '\'Mcguilligan\'', '\'Marines\'', '\'Gunnery Sergeant\'', '\'November 20, 2014 - PRESENT\'', '\'1-011-101-1000\'', '\'steven@mcguilligan.net\'', '\'NEVER\'', '\'StevenMcguilligan1\'', '\'srohan524\''))
 if(addToTable('vets', $input1, $input2))
   {
     echo '<script type="text/javascript">',
@@ -47,10 +60,9 @@ if(addToTable('vets', $input1, $input2))
      '</script>';
   }
 }
-    //sample for printing/returning all of the specified values of all vets for that column: example: return firstname of all vets
+    //sample for printing all of the specified values of all vets for that column: example: return firstname of all vets, let me know if you want different return types, but it should be pretty simple to modify just copy the original
 if(isset($_POST['printc']))
     {
-//      $array = array("idN", "first", "middle", "last", "branch", "rank");
         //the string to put in to find values
         $inputString = "idN, first, middle, last, branch, rank";
       selectCol($inputString, "vets", ";");
@@ -80,25 +92,6 @@ if(isset($_POST['delc']))
         // Close connection
         $mysqli->close();
     }
-/*function addToTable($table, $idN, $fName, $mName, $lName, $branch, $rank, $activeDates, $phoneNum, $email, $dolcu, $username, $password){
-    $mysqli = new mysqli("localhost", "root", "briggs-test", "V4V");
- 
-// Check connection
-    if($mysqli === false){
-         die("ERROR: Could not connect. " . $mysqli->connect_error);
-    }
- 
-// Attempt insert query execution
-    $sql = "INSERT INTO " . $table . " (idN, first, middle, last, branch, rank, activeD, phoneNum, email, dolcu, username, password) VALUES (" . $idN . ", " . $fName . ", " . $mName . ", " . $lName . ", " . $branch . ", " . $rank . ", " . $activeDates . ", " . $phoneNum . ", " . $email . ", " . $dolcu . ", " . $username . ", " . $password . ")";
-    if($mysqli->query($sql) === true){
-        echo "Records inserted successfully.";
-    } else{
-        echo "ERROR: Could not able to execute $sql. " . $mysqli->error;
-    }
- 
-    // Close connection
-    $mysqli->close();
-}*/
   //* for all, commas for multiple
   //order is optional: semicolon for nothing,  ORDER BY row
   //arr is for all of the cols
