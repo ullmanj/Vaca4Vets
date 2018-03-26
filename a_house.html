@@ -1,0 +1,213 @@
+<html>
+  <head>
+    <title>Vacations for Veterans</title>
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="CSS/styles.css">
+  </head>
+
+  <header>
+    <table class="nopad">
+      <tr>
+        <td class="notform">
+          <h2>V4V</h2>
+        </td>
+        <td class="notform">
+          <p><a class="navlink" href="home.html">HOME</a></p>
+        </td>
+        <td class="notform">
+          <p><a class="navlink" href="profile.html">PROFILE</a></p>
+        </td>
+        <td class="notform">
+          <p><a class="navlink" href="about.html" style="padding-right:10px">ABOUT</a></p>
+        </td>
+        <td class="right">
+          <form class="nopad" style="padding-left:300px"><input type="text" name="search" placeholder="Search for a location"></form>
+        </td>
+        <td>
+          <img class="notpad" src="images/search.png" alt="search" width="30" height ="30">
+        </td>
+    </tr>
+    </table>
+  </header>
+
+  <body>
+    <div class="slideshow-container">
+
+  <!-- Full-width images with number and caption text -->
+    <div class="mySlides fade">
+      <img class="house" src="images/house1.jpeg" alt="house1">
+    </div>
+
+    <div class="mySlides fade">
+      <img class="house" src="images/house2.jpeg" alt="house1">
+    </div>
+
+    <div class="mySlides fade">
+      <img class="house" src="images/house3.jpg" alt="house1">
+    </div>
+
+    <!-- Next and previous buttons -->
+    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+  </div>
+  <br>
+
+  <!-- The dots/circles -->
+  <div style="text-align:center">
+    <span class="dot" onclick="currentSlide(1)"></span>
+    <span class="dot" onclick="currentSlide(2)"></span>
+    <span class="dot" onclick="currentSlide(3)"></span>
+  </div>
+
+  <br>
+  <table>
+    <tr>
+      <td>
+        <h3 class="housetext" style="font-size: 30">Vermont Mansion on Lake</h3>
+      </td>
+      <td>
+        <img src="images/bookmark1.png" alt="bookmark" class="bookmark">
+      </td>
+    </tr>
+  </table>
+
+  <p class="capdetail" style="margin-left: 210px">Woodford, VT</p>
+  <img style="margin-left: 210px" src="images/grayline.png" alt="grayline" width=791px>
+  <h3 class="housetext"><b>DESCRIPTION</b></h3>
+  <p class="housetext">A nice cozy cabin in the woods of VT, situated on a lake, perfect for fishing and enjoying nature, etc</p>
+  <table class="icons">
+    <tr>
+      <td class="separate">
+        <img src="images/guests.png" alt="guests" class="icon">
+      </td>
+      <td class="separate">
+        <p class="icontext">5 guests</p>
+      </td>
+      <td class="separate">
+        <img src="images/bedroom.png" alt="bedroom" class="icon">
+      </td>
+      <td class="separate">
+        <p class="icontext">4 bedrooms</p>
+      </td>
+      <td class="separate">
+        <img src="images/bathroom.png" alt="bathroom" class="icon">
+      </td>
+      <td class="separate">
+        <p class="icontext">4 baths</p>
+      </td>
+    </tr>
+  </table>
+  <img style="margin-left: 210px" src="images/grayline.png" alt="grayline" width=791px>
+
+  <h3 class="housetext"><b>AMENITIES</b></h3>
+  <table class="icons">
+    <tr>
+      <td class="separate">
+        <img src="images/kitchen.png" alt="kitchen" class="icon">
+      </td>
+      <td class="separate">
+        <p class="icontext">kitchen</p>
+      </td>
+      <td class="separate">
+        <img src="images/TV.png" alt="TV" class="icon">
+      </td>
+      <td class="separate">
+        <p class="icontext">TV</p>
+      </td>
+      <td class="separate">
+        <img src="images/laundry.png" alt="laundry" class="icon">
+      </td>
+      <td class="separate">
+        <p class="icontext">washer + dryer</p>
+      </td>
+
+    </tr>
+    <tr>
+      <td class="separate">
+        <img src="images/pool.png" alt="pool" class="icon">
+      </td>
+      <td class="separate">
+        <p class="icontext">pool</p>
+      </td>
+      <td>
+        <img src="images/wifi.png" alt="wifi" class="icon">
+      </td>
+      <td class="separate">
+        <p class="icontext">wifi</p>
+      </td>
+      <td class="separate">
+        <img src="images/AC.png" alt="AC" class="icon">
+      </td>
+      <td class="separate">
+        <p class="icontext">AC</p>
+      </td>
+    </tr>
+  </table>
+  <img style="margin-left: 210px" src="images/grayline.png" alt="grayline" width=791px>
+
+  <h3 class="housetext">LOCATION</p>
+    <div id="map" style="width:400px;height:400px"></div>
+  <img src="images/grayline.png" alt="grayline" width=791px>
+  <h3 class="housetext">CONTACT VENDOR</p>
+    <table class="icons">
+      <tr>
+        <td class="separate">
+          <img src="images/guests.png" alt="guests" class="icon">
+        </td>
+        <td class="separate">
+          <p class="icontext">Vendor name</p>
+        </td>
+    </table>
+    <p class="icontext">Email: vendor@vendor.com</p>
+    <p class="icontext">Phone: xxx-xxx-xxxx</p>
+    <img src="images/grayline.png" alt="grayline" width=791px>
+    <h3 class="housetext">REVIEWS</p>
+    <p class="icontext" style="color: #BBA500">★★★★★</p>
+    <p class="icontext">No reviews have been written for this listing yet.</p>
+
+
+
+  <script>
+    var slideIndex = 1;
+    showSlides(slideIndex);
+
+    // Next/previous controls
+    function plusSlides(n) {
+      showSlides(slideIndex += n);
+    }
+
+    // Thumbnail image controls
+    function currentSlide(n) {
+      showSlides(slideIndex = n);
+    }
+
+    function showSlides(n) {
+      var i;
+      var slides = document.getElementsByClassName("mySlides");
+      var dots = document.getElementsByClassName("dot");
+      if (n > slides.length) {slideIndex = 1}
+      if (n < 1) {slideIndex = slides.length}
+      for (i = 0; i < slides.length; i++) {
+          slides[i].style.display = "none";
+      }
+      for (i = 0; i < dots.length; i++) {
+          dots[i].className = dots[i].className.replace(" active", "");
+      }
+      slides[slideIndex-1].style.display = "block";
+      dots[slideIndex-1].className += " active";
+     }
+
+
+     function myMap() {
+       var mapOptions = {
+         center: new google.maps.LatLng(51.5, -0.12),
+         zoom: 10,
+         mapTypeId: google.maps.MapTypeId.HYBRID
+       }
+     var map = new google.maps.Map(document.getElementById("map"), mapOptions);
+     }
+
+  </script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBu-916DdpKAjTmJNIgngS6HL_kDIKU0aU&callback=myMap"></script>
+  </body>
+</html>

@@ -6,7 +6,13 @@ h2 {
   padding-top: 10px;
   font-family: 'Lato', sans-serif;
   font-size: 40;
+}
 
+h5 {
+  color: #041958;
+  font-weight: 300;
+  font-family: 'Lato', sans-serif;
+  font-size: 30;
 }
 
 header {
@@ -32,11 +38,11 @@ body.first {
   background-size: cover;
 }
 
-body.home {
+body.about {
   padding: 0;
   margin: 0;
   background-color: #f0f2f6;
-  background-image: url(https://unsplash.com/photos/t2b1Z-jPT-w)
+  background-image: url(https://images.unsplash.com/photo-1498174979972-c9de7e6a93d6?auto=format&fit=crop&w=967&q=80);
   background-repeat:no-repeat;
   background-size: cover;
 }
@@ -50,6 +56,17 @@ body {
 p {
   font-family: 'Lato', sans-serif;
   word-wrap: break-word;
+}
+
+div.block {
+  background-color: #f0f2f6;
+  position: absolute;
+  height: 560px;
+  width: 500px;
+  margin-left: 600px;
+  margin-right: 100px;
+  margin-top: 20px;
+  margin-bottom: 20px;;
 }
 
 .small {
@@ -131,7 +148,6 @@ table.nopad {
 
 table.centered {
   border: none;
-  padding-bottom: 10px;
   padding-left: none;
   font-family: 'Lato', sans-serif;
   font-weight: 300;
@@ -140,14 +156,12 @@ table.centered {
   word-wrap: break-word;
   margin-left: auto;
   margin-right: auto;
-}
-
-td {
-  padding-right: 20px;
+  margin-bottom: none;
 }
 
 .notform {
   padding: none;
+  margin: none;
 }
 
 .right {
@@ -163,9 +177,33 @@ td {
 img.home {
   width: 316px;
   height: 210px;
-  margin-bottom: 15px;
-  padding: 10px;
-  padding-left: none;
+  margin-right: 10px;
+  margin-top: 10px;
+  margin-left: 10px;
+}
+
+div.caption {
+  background-color: white;
+  width: 316px;
+  height: 80px;
+  margin-left: 10px;
+  padding-top: -25px;
+}
+
+p.homecap {
+
+  color: black;
+  font-weight: 400;
+  margin: none;
+  Padding: none;
+  text-decoration: underline;
+}
+
+.capdetail {
+  color: black;
+  font-weight: 300;
+  font-size: 15px;
+  margin-top: -15px;
 }
 
 button {
@@ -217,4 +255,131 @@ a.navlink:hover {
 
 .notpad {
   padding: none;
+}
+
+
+/* styling for A_HOUSE*/
+.house {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 50px; /*maybe do away with this*/
+  width: 791px;
+  height: 525px;
+}
+
+.housetext {
+  padding-left: 210px;
+  font-family: 'Lato', sans-serif;
+  font-size: 20px;
+  color: black;
+}
+
+img.icon {
+  width: 50px;
+  height: 50px;
+  vertical-align: middle;
+}
+
+.icontext {
+  margin-right: 20px;
+  font-family: 'Lato', sans-serif;
+  font-size: 20px;
+  color: black;
+}
+
+table.icons {
+  margin-left: 210px; /* change this to adjust padding - house pg */
+}
+
+td.separate {
+  padding-bottom: 20px;
+}
+
+.bookmark {
+
+  margin-left: 380px;
+  width: 40px;
+  height: 40px;
+  vertical-align: middle;
+}
+
+/*styling for PROFILE*/
+img.profilepic {
+  vertical-align: middle;
+  width: 200px;
+  height: 200px;
+  margin-left: -30px;
+  padding-right: 20px;
+  padding-top: 30px;
+}
+
+div.smallcap
+{
+  background-color: white;
+  width: 113px;
+  height: 65px;
+}
+
+img.thumbnail {
+  margin-right: 10px;
+  width: 113px;
+  height: 75px;
+}
+
+
+/* ATTEMPT SLIDESHOW*/
+* {box-sizing: border-box;}
+/* Slideshow container */
+.slideshow-container {
+  max-width: 1000px;
+  position: relative;
+  margin: auto;
+}
+
+/* Hide the images by default */
+.mySlides {
+    display: none;
+}
+
+/* Next & previous buttons */
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  margin-top: -22px;
+  padding: 16px;
+  color: black;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.8);
+}
+
+/* The dots/bullets/indicators */
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active, .dot:hover {
+  background-color: #717171;
 }
