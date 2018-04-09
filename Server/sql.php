@@ -43,11 +43,11 @@ $dbname = "V4V";*/
 
 if (isset($_POST['add'])) 
 {
-    
+    $array = array("idN" => 46, "first" => 'Steven', "middle" => 'Rohan', "last" => 'Mcguilligan', "branch" => 'Marines', "rank" => 'Gunnery Sergeant', "activeD" => 'November 20, 2014 - PRESENT', "phoneNum" => '1-011-101-1000', "email" => 'steven@mcguilligan.net', "dolcu" => 'NEVER', "username" => 'StevenMcguilligan1', "password" => 'srohan524');
     //adds vet to table: input1 is the column names in order (see above), input2 is the values: strings need to be encompased by single quotes
-    $input1 = "idN, first, middle, last, branch, rank, activeD, phoneNum, email, dolcu, username, password";
-    $input2 = "46, 'Steven', 'Rohan', 'Mcguilligan', 'Marines', 'Gunnery Sergeant', 'November 20, 2014 - PRESENT', '1-011-101-1000', 'steven@mcguilligan.net', 'NEVER', 'StevenMcguilligan1', 'srohan524'";
-if(addToTable('vets', $input1, $input2))
+    //$input1 = "idN, first, middle, last, branch, rank, activeD, phoneNum, email, dolcu, username, password";
+    //$input2 = "46, 'Steven', 'Rohan', 'Mcguilligan', 'Marines', 'Gunnery Sergeant', 'November 20, 2014 - PRESENT', '1-011-101-1000', 'steven@mcguilligan.net', 'NEVER', 'StevenMcguilligan1', 'srohan524'";
+if(addToTable('vets', $array, 12))
   {
     echo '<script type="text/javascript">',
      'document.getElementById("myspan").innerHTML ="Added";',
@@ -64,25 +64,34 @@ if(addToTable('vets', $input1, $input2))
 if(isset($_POST['printc']))
     {
         //the string to put in to find values
-        $inputString = "idN, first, middle, last, branch, rank";
-      selectCol($inputString, "vets", ";");
+        //$inputA = "idN, first, middle, last, branch, rank";
+      $inputA = array("idN", "first", "middle", "last", "branch", "rank");
+      selectCol($inputA, "vets", ";");
     }
     //sample for deleting a row by value in a column: example: delete user in vets whose id is 17382
 if(isset($_POST['delc']))
 {
   //add quotes around val
   //table         col               value
-  delRow("vets", $_POST['delcc'], $_POST['delcv']);
+  delRow("vets", /*$_POST['delcc'],*/ $_POST['delcv']);
 }
     function addToTable($table, $i1, $i2)
     {
+      for($x = 0; $x < $i2 - 1; $x++)
+      {
+        $in1 = $in1 . key($array) . ", ";
+        $in2 = $in2 . $array(key($array)) . ", ";
+        next($array);
+      }
+      $in1 = $in1 . key($array);
+      $in2 = $in2 . $array(key($array));
         $mysqli = new mysqli("localhost", "root", "briggs-test", "V4V");
         
         // Check connection
         if($mysqli === false){
             die("ERROR: Could not connect. " . $mysqli->connect_error);
         }
-        $sql = "INSERT INTO " . $table . " (" . $i1 . ") VALUES (" . $i2 . ")";
+        $sql = "INSERT INTO " . $table . " (" . $in1 . ") VALUES (" . $in2 . ")";
         if($mysqli->query($sql) === true){
             echo "Records inserted successfully.";
         } else{
@@ -97,8 +106,9 @@ if(isset($_POST['delc']))
   //arr is for all of the cols
 function selectCol($cols, $table, $order)
 {
-    $arr = array();
-    $arr = explode(', ', $cols);
+    //$arr = array();
+    //$arr = explode(', ', $cols);
+  $arr = $cols
     $num = count($arr);
   $conn = new mysqli("localhost", "root", "briggs-test", "V4V");
   // Check connection
@@ -112,18 +122,21 @@ function selectCol($cols, $table, $order)
   if ($result->num_rows > 0) {
       // output data of each row
       while($row = $result->fetch_assoc()) {
-        for($y = 0; $y < $num; $y++)
-        {
-            echo "<b>" . $arr[$y] . "</b>: " . $row[$arr[$y]] . "<br>";
-        }
-        echo "<br>";
+        //for($y = 0; $y < $num; $y++)
+        //{
+          //  echo "<b>" . $arr[$y] . "</b>: " . $row[$arr[$y]] . "<br>";
+        //}
+        //echo "<br>";
+        var_dump($array);
+        var_dump($row);
+        return array_combine($arr, $row);
       }
   } else {
       echo "0 results";
   }
   $conn->close();
 }
-function delRow($table, $col, $val)
+function delRow($table, /*$col,*/ $val)
   {
     $conn = new mysqli("localhost", "root", "briggs-test", "V4V");
   // Check connection
@@ -132,7 +145,7 @@ function delRow($table, $col, $val)
   } 
   
   // sql to delete a record
-  $sql = "DELETE FROM " . $table . " WHERE " . $col . "=" . $val;
+  $sql = "DELETE FROM " . $table . " WHERE idN = " /*. $col . "="*/ . $val;
   
   if ($conn->query($sql) === TRUE) {
       echo "Record deleted successfully";
