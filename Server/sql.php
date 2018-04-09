@@ -19,7 +19,7 @@ TESTING
         <input type="submit" value="Add" name="add">
         <input type="submit" value="Print" name="printc">
           <br>
-          <input type="text" value = "col" name="delcc">
+          <!--<input type="text" value = "col" name="delcc">-->
             <br>
             MUst put in with quotes if a string
             <input type="text" value = "val" name="delcv">
@@ -73,7 +73,7 @@ if(isset($_POST['delc']))
 {
   //add quotes around val
   //table         col               value
-  delRow("vets", /*$_POST['delcc'],*/ $_POST['delcv']);
+  delRow("vets", $_POST['delcv']);
 }
     function addToTable($table, $i1, $i2)
     {
@@ -136,7 +136,7 @@ function selectCol($cols, $table, $order)
   }
   $conn->close();
 }
-function delRow($table, /*$col,*/ $val)
+function delRow($table, $val)
   {
     $conn = new mysqli("localhost", "root", "briggs-test", "V4V");
   // Check connection
@@ -145,7 +145,7 @@ function delRow($table, /*$col,*/ $val)
   } 
   
   // sql to delete a record
-  $sql = "DELETE FROM " . $table . " WHERE idN = " /*. $col . "="*/ . $val;
+  $sql = "DELETE FROM " . $table . " WHERE idN = " . $val . ";";
   
   if ($conn->query($sql) === TRUE) {
       echo "Record deleted successfully";
