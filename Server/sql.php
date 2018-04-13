@@ -6,9 +6,11 @@ CREATE TABLE experience (idN INTEGER, sName VARCHAR (60), address VARCHAR (100),
 
 CREATE TABLE vacHome (idN INTEGER, address VARCHAR (100), REL VARCHAR (100), description VARCHAR (1000), datesA VARCHAR (100), bedrooms INTEGER, fees VARCHAR (100));
 
-CREATE TABLE vendor (idN INTEGER, first VARCHAR (30), middle VARCHAR (30), last VARCHAR (40), typeId VARCHAR (20), phoneNum VARCHAR (30), email VARCHAR (40), active BOOLEAN, username VARCHAR (25), password VARCHAR (25));
+CREATE TABLE vendor (idN INTEGER, first VARCHAR (30), middle VARCHAR (30), last VARCHAR (40), typeId VARCHAR (20), phoneNum VARCHAR (30), email VARCHAR (40), 
+active BOOLEAN, username VARCHAR (25), password VARCHAR (25));
 
-CREATE TABLE vets (idN INTEGER, first VARCHAR (30), middle VARCHAR (30), last VARCHAR (40), branch VARCHAR (30), rank VARCHAR (30), activeD VARCHAR (60), phoneNum VARCHAR (30), email VARCHAR (40), dolcu VARCHAR (20), username VARCHAR (25), password VARCHAR (25));
+CREATE TABLE vets (idN INTEGER, first VARCHAR (30), middle VARCHAR (30), last VARCHAR (40), branch VARCHAR (30), rank VARCHAR (30), activeD VARCHAR (60), phoneNum VARCHAR (30), email VARCHAR (40), 
+dolcu VARCHAR (20), username VARCHAR (25), password VARCHAR (25));
  
  Additional Notes around the functions. Let me know if you have questions*/
 
@@ -43,10 +45,12 @@ $dbname = "V4V";*/
 
 if (isset($_POST['add'])) 
 {
-    $array = array("idN" => 46, "first" => 'Steven', "middle" => 'Rohan', "last" => 'Mcguilligan', "branch" => 'Marines', "rank" => 'Gunnery Sergeant', "activeD" => 'November 20, 2014 - PRESENT', "phoneNum" => '1-011-101-1000', "email" => 'steven@mcguilligan.net', "dolcu" => 'NEVER', "username" => 'StevenMcguilligan1', "password" => 'srohan524');
+    $array = array("idN" => 46, "first" => '\'Steven\'', "middle" => '\'Rohan\'', "last" => '\'Mcguilligan\'', "branch" => '\'Marines\'', 
+"rank" => '\'Gunnery Sergeant\'', "activeD" => '\'November 20, 2014 - PRESENT\'', "phoneNum" => '\'1-011-101-1000\'', "email" => '\'steven@mcguilligan.net\'', "dolcu" => '\'NEVER\'', 
+"username" => '\'StevenMcguilligan1\'', "password" => '\'srohan524\'');
     //adds vet to table: input1 is the column names in order (see above), input2 is the values: strings need to be encompased by single quotes
     //$input1 = "idN, first, middle, last, branch, rank, activeD, phoneNum, email, dolcu, username, password";
-    //$input2 = "46, 'Steven', 'Rohan', 'Mcguilligan', 'Marines', 'Gunnery Sergeant', 'November 20, 2014 - PRESENT', '1-011-101-1000', 'steven@mcguilligan.net', 'NEVER', 'StevenMcguilligan1', 'srohan524'";
+    //$input2 = "46, 'Steven', 'Rohan', 'Mcguilligan', 'Marines', 'Gunnery Sergeant', 'November 20, 2014 - PRESENT', '1-011-101-1000', 'steven@mcguilligan.net', 'NEVER', 'StevenMcguilligan1', 
 if(addToTable('vets', $array, 12))
   {
     echo '<script type="text/javascript">',
@@ -60,13 +64,14 @@ if(addToTable('vets', $array, 12))
      '</script>';
   }
 }
-    //sample for printing all of the specified values of all vets for that column: example: return firstname of all vets, let me know if you want different return types, but it should be pretty simple to modify just copy the original
+    //sample for printing all of the specified values of all vets for that column: example: return firstname of all vets, let me know if you want different return types, but it should be pretty
+// simple to modify just copy the original
 if(isset($_POST['printc']))
     {
         //the string to put in to find values
         //$inputA = "idN, first, middle, last, branch, rank";
-      $inputA = array("idN", "first", "middle", "last", "branch", "rank");
-      selectCol($inputA, "vets", ";");
+      //$inputA = array("idN", "first", "middle", "last", "branch", "rank");
+      selectCol(46, "vets", ";");
     }
     //sample for deleting a row by value in a column: example: delete user in vets whose id is 17382
 if(isset($_POST['delc']))
@@ -77,15 +82,19 @@ if(isset($_POST['delc']))
 }
     function addToTable($table, $i1, $i2)
     {
+      $in2 = "";
+      $in1 = "";
       for($x = 0; $x < $i2 - 1; $x++)
       {
-        $in1 = $in1 . key($array) . ", ";
-        $in2 = $in2 . $array(key($array)) . ", ";
-        next($array);
-      }
-      $in1 = $in1 . key($array);
-      $in2 = $in2 . $array(key($array));
-        $mysqli = new mysqli("localhost", "root", "briggs-test", "V4V");
+            $in1 = $in1 . key($i1) . ", ";
+            $in2 = $in2 . $i1[key($i1)] . ", ";
+            next($i1);
+        }
+        $in1 = $in1 . key($i1);
+        $in2 = $in2 . $i1[key($i1)];
+echo "Thing1: " . $in1;
+echo "<br>Thing2:" . $in2 . "<br>";
+$mysqli = new mysqli("localhost", "root", "briggs-test", "V4V");
         
         // Check connection
         if($mysqli === false){
@@ -107,22 +116,22 @@ if(isset($_POST['delc']))
 function selectCol($cols, $table, $order)
 {
     //$arr = array();
-    //$arr = explode(', ', $cols);
-  $arr = $cols
-    $num = count($arr);
+    //$arr = explode(', ', $cols)
   $conn = new mysqli("localhost", "root", "briggs-test", "V4V");
   // Check connection
   if ($conn->connect_error) {
       die("Connection failed: " . $conn->connect_error);
   } 
   
-  $sql = "SELECT " . $cols . " FROM " . $table . $order;
+  $sql = "SELECT *  FROM " . $table . " WHERE idN = " . $cols . $order;
+//  echo $sql;
   $result = $conn->query($sql);
   
   if ($result->num_rows > 0) {
       // output data of each row
       while($row = $result->fetch_assoc()) {
         //for($y = 0; $y < $num; $y++)
+
         //{
           //  echo "<b>" . $arr[$y] . "</b>: " . $row[$arr[$y]] . "<br>";
         //}
@@ -158,3 +167,4 @@ function delRow($table, $val)
                 
 ?>
   
+
