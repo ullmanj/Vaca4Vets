@@ -145,6 +145,31 @@ function selectCol($cols, $table, $order)
   }
   $conn->close();
 }
+function duplicateCol($val, $cols, $table)
+{
+    //$arr = array();
+    //$arr = explode(', ', $cols)
+  $conn = new mysqli("localhost", "root", "briggs-test", "V4V");
+  // Check connection
+  if ($conn->connect_error) {
+      die("Connection failed: " . $conn->connect_error);
+  } 
+  
+  $sql = "SELECT *  FROM " . $table . " WHERE " . $cols . " = " . $val;
+//  echo $sql;
+  $result = $conn->query($sql);
+  $i = true;
+  if ($result->num_rows > 0) {
+      // output data of each row
+      while($row = $result->fetch_assoc()) {
+      	$i = false;
+      }
+  } else {
+      echo "0 results";
+  }
+  return $i;
+  $conn->close();
+}
 function delRow($table, $val)
   {
     $conn = new mysqli("localhost", "root", "briggs-test", "V4V");
