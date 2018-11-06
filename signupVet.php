@@ -17,26 +17,26 @@
     <form> <!-- TO WRAP ALL THIS: -->
       <tr>
         <td>First name:<br>
-          <input type="text" name="firstname" value="John"><br><br>
+          <input type="text" name="firstname" placeholder="John"><br><br>
         </td>
         <td>Last name:<br>
-          <input type="text" name="lastname" value="Adams"><br><br>
+          <input type="text" name="lastname" placeholder="Adams"><br><br>
         </td>
       </tr>
       <tr>
         <td>Rank:<br>
-          <input type="text" name="rank" value="Colonel"><br><br>
+          <input type="text" name="rank" placeholder="Colonel"><br><br>
         </td>
         <td>Branch:<br>
-          <input type="text" name="branch" value="Branch"><br><br>
+          <input type="text" name="branch" placeholder="Marines"><br><br>
         </td>
       </tr>
       <tr>
         <td>Email:<br>
-          <input type="text" name="email" value="john@adams.com"><br><br>
+          <input type="text" name="email" placeholder="john@adams.com"><br><br>
         </td>
         <td>Phone number:<br>
-          <input type="text" name="phone" value="xxx-xxx-xxxx"><br><br>
+          <input type="text" name="phone" placeholder="123-456-7890"><br><br>
         </td>
       </tr>
     </form>
