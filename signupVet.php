@@ -44,7 +44,7 @@
     <img class="signup" src="images/grayline.png" alt="gray line" width=300px>
     <form>
       Password:<br>
-      <input type="text" name="password" value="Must be more than 7 characters"><br><br>
+      <input type="text" name="password" placeholder="Must be more than 7 characters"><br><br>
       Retype Password:<br>
       <input type="text" name="password"><br><br>
     </form>

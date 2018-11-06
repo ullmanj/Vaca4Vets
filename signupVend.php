@@ -18,18 +18,18 @@
     <form> <!-- TO WRAP ALL THIS: -->
       <tr>
         <td>First name:<br>
-          <input type="text" name="firstname" value="John"><br><br>
+          <input type="text" name="firstname" placeholder="John"><br><br>
         </td>
         <td>Last name:<br>
-          <input type="text" name="lastname" value="Adams"><br><br>
+          <input type="text" name="lastname" placeholder="Adams"><br><br>
         </td>
       </tr>
       <tr>
         <td>Email:<br>
-          <input type="text" name="email" value="john@adams.com"><br><br>
+          <input type="text" name="email" placeholder="john@adams.com"><br><br>
         </td>
         <td>Phone number:<br>
-          <input type="text" name="phone" value="xxx-xxx-xxxx"><br><br>
+          <input type="text" name="phone" placeholder="123-456-7890"><br><br>
         </td>
       </tr>
     </form>
@@ -38,7 +38,7 @@
     <img class="signup" src="images/grayline.png" alt="gray line" width=300px>
     <form>
       Password:<br>
-      <input type="text" name="password" value="Must be more than 7 characters"><br><br>
+      <input type="text" name="password" placeholder="Must be more than 7 characters"><br><br>
       Retype Password:<br>
       <input type="text" name="password"><br><br>
     </form>

@@ -13,7 +13,7 @@
  <body class=first>
    <p class=center1>Welcome to <i>Vacations for Veterans</i></p>
    <br>
-   <p class=center2><mark style="background-color:#FFFFFF">Are you a <a href=signupVet.html>Veteran</a> or a <a href=signupVend.html>Vendor</a>?</mark></p>
+   <p class=center2><mark style="background-color:#FFFFFF">Are you a <a href=signupVet.php>Veteran</a> or a <a href=signupVend.php>Vendor</a>?</mark></p>
 </body>
 <footer>
 </footer>
