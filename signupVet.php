@@ -51,17 +51,24 @@
       <td>Username<br>
       <input type="text" name="username" placeholder="johnAdams3"><br><br>
       </td>
+    </tr>
+    <tr>
       <td>
       Password (Must be at least 8 characters:<br>
       <input type="password" name="password"><br><br>
       </td>
+    </tr>
+    <tr>
       <td>
       Retype Password:<br>
       <input type="password" name="password2"><br><br>
       </td>
+    </tr>
+    <tr>
       <td>
       <input type="submit" value="Submit" name="createVet">
       </td>
+    </tr>
       </table>
     </form>
     </tr>
