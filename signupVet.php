@@ -65,7 +65,7 @@ if (isset($_POST['createVet']))
 {
 	if(isset($_POST['username']) && isset($_POST['aD']) && isset($_POST['firstname']) && isset($_POST['lastname']) && isset($_POST['rank']) && isset($_POST['branch']) && isset($_POST['email']) && isset($_POST['phone']) && isset($_POST['password']) && isset($_POST['password2']))
 	{
-		if(duplicateCol($_POST['username'], 'username', 'vets')
+		if(duplicateCol($_POST['username'], 'username', 'vets'))
 		{
 			if($_POST['password'] === $_POST['password2'])
 			{
