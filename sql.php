@@ -20,11 +20,13 @@ TESTING
 <form method="post" enctype="multipart/form-data">
         <input type="submit" value="Add" name="add">
         <input type="submit" value="Print" name="printc">
+        Id num for value
+        <input type="text" placeholder = "id num" name="pCV">
           <br>
           <!--<input type="text" value = "col" name="delcc">-->
             <br>
             MUst put in with quotes if a string
-            <input type="text" value = "val" name="delcv">
+            <input type="text" placeholder = "val" name="delcv">
               <br>
         <input type="submit" value="Del" name="delc">
           
@@ -71,7 +73,7 @@ if(isset($_POST['printc']))
         //the string to put in to find values
         //$inputA = "idN, first, middle, last, branch, rank";
       //$inputA = array("idN", "first", "middle", "last", "branch", "rank");
-      selectCol(46, "vets", ";");
+      selectCol($_POST['pCV'], "vets", ";");
     }
     //sample for deleting a row by value in a column: example: delete user in vets whose id is 17382
 if(isset($_POST['delc']))
