@@ -46,16 +46,25 @@
           <input type="text" name="phone" placeholder="123-456-7890"><br><br>
         </td>
       </tr>
-    </table>
+    <tr>
     <img class="signup" src="images/grayline.png" alt="gray line" width=300px>
-    Username<br>
+      <td>Username<br>
       <input type="text" name="username" placeholder="johnAdams3"><br><br>
+      </td>
+      <td>
       Password (Must be at least 8 characters:<br>
       <input type="password" name="password"><br><br>
+      </td>
+      <td>
       Retype Password:<br>
       <input type="password" name="password2"><br><br>
+      </td>
+      <td>
       <input type="submit" value="Submit" name="createVet">
+      </td>
+      </table>
     </form>
+    </tr>
     <!--p class="padleft"><a href="home.html"><button type="button"><b>Continue ></b></button></a></p-->
   </body>
 </html>
