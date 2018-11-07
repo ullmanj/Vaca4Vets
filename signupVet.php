@@ -90,7 +90,8 @@ if (isset($_POST['createVet']))
 				{
 					$newIdTemp = rand(100000, 1000000);
 					$newId = $newIdTemp;
-				}while(duplicateCol($newIdTemp, 'idN', 'vets'));
+				}while(false);
+				//duplicateCol($newIdTemp, 'idN', 'vets')
     			$array = array("idN" => $newId, "first" => '\'' . $_POST['firstname'] . '\'', "middle" => '\'' . $_POST['middlename'] . '\'', "last" => '\'' . $_POST['lastname'] . '\'', "branch" => '\'' . $_POST['branch'] . '\'', 
 				"rank" => '\'' . $_POST['rank'] . '\'', "activeD" => '\'' . $_POST['aD'] . '\'', "phoneNum" => '\'' . $_POST['phone'] . '\'', "email" => '\'' . $_POST['email'] . '\'', "dolcu" => '\'NEVER\'', 
 				"username" => '\'' . $_POST['username'] . '\'', "password" => '\'' . $_POST['password'] . '\'');
