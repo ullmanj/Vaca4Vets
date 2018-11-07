@@ -66,6 +66,7 @@ if (isset($_POST['createVet']))
 	if(isset($_POST['username']) && isset($_POST['aD']) && isset($_POST['firstname']) && isset($_POST['lastname']) && isset($_POST['rank']) && isset($_POST['branch']) && isset($_POST['email']) && isset($_POST['phone'] && isset($_POST['password']) && isset($_POST['password2']))
 	{
 		if(duplicateCol($_POST['username'], 'username', 'vets')
+		{
 			if($_POST['password'] === $_POST['password2'])
 			{
     			$array = array("idN" => 46, "first" => '\'' . $_POST['firstname'] . '\'', "middle" => '\'' . $_POST['middlename'] . '\'', "last" => '\'' . $_POST['lastname'] . '\'', "branch" => '\'' . $_POST['branch'] . '\'', 
@@ -86,6 +87,7 @@ if (isset($_POST['createVet']))
      				'document.getElementById("myspan").innerHTML ="Error";',
      				'</script>';
   				}
+  			}
   			else
   			{
   				echo 'Passwords are not the same'
