@@ -103,12 +103,14 @@ $mysqli = new mysqli("localhost", "root", "briggs-test", "V4V");
         $sql = "INSERT INTO " . $table . " (" . $in1 . ") VALUES (" . $in2 . ")";
         if($mysqli->query($sql) === true){
             echo "Records inserted successfully.";
+            return true;
         } else{
             echo "ERROR: Could not able to execute $sql. " . $mysqli->error;
         }
         
         // Close connection
         $mysqli->close();
+        return false;
     }
   //* for all, commas for multiple
   //order is optional: semicolon for nothing,  ORDER BY row
