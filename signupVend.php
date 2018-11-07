@@ -7,11 +7,11 @@
   
   <header>
     <h2>V4V</h2>
-    <p><a class="navlink" href="login.html">LOG IN</a></p>
+    <p><a class="navlink" href="login.php">LOG IN</a></p>
   </header>
 
   <body>
-    <p class=small><a href="signupVet.html">Sign up as a Veteran</a></p>
+    <p class=small><a href="signupVet.php">Sign up as a Veteran</a></p>
     <p class="left1">Please sign up as a <i>Vendor:</i></p>
 
     <table class="pad">

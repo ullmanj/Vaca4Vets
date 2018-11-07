@@ -11,7 +11,7 @@
   </header>
 
   <body>
-    <p class=small><a href="index.html">Sign up</a></p>
+    <p class=small><a href="index.php">Sign up</a></p>
     <p class="left1">Welcome back! Please log in:</p>
     <form> <!-- TO WRAP ALL THIS: -->
       Email:<br>
