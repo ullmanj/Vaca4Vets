@@ -63,7 +63,7 @@
 include 'sql.php';
 if (isset($_POST['createVet'])) 
 {
-	if(isset($_POST['username']) && isset($_POST['aD']) && isset($_POST['firstname']) && isset($_POST['lastname']) && isset($_POST['rank']) && isset($_POST['branch']) && isset($_POST['email']) && isset($_POST['phone']) && isset($_POST['password']) && isset($_POST['password2']))
+	if($_POST['username'] != "" && $_POST['aD'] != "" && $_POST['firstname'] != "" && $_POST['lastname'] != "" && $_POST['rank'] != "" && $_POST['branch'] != "" && $_POST['email'] != "" &&  $_POST['phone'] != "" && $_POST['password'] != "" && $_POST['password2'] != "")
 	{
 		if(duplicateCol($_POST['username'], 'username', 'vets'))
 		{
@@ -77,15 +77,11 @@ if (isset($_POST['createVet']))
     //$input2 = "46, 'Steven', 'Rohan', 'Mcguilligan', 'Marines', 'Gunnery Sergeant', 'November 20, 2014 - PRESENT', '1-011-101-1000', 'steven@mcguilligan.net', 'NEVER', 'StevenMcguilligan1', 
 				if(addToTable('vets', $array, 12))
   				{
-   		 			echo '<script type="text/javascript">',
-					'document.getElementById("myspan").innerHTML ="Added";',
-     				'</script>';
+   		 			echo 'Added';
   				}
  	 			else
   				{
-  		 			echo '<script type="text/javascript">',
-     				'document.getElementById("myspan").innerHTML ="Error";',
-     				'</script>';
+  		 			echo 'Error Adding';
   				}
   			}
   			else
