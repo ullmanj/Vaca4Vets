@@ -1,4 +1,8 @@
-/*
+
+
+<html>
+<body>
+<!--
  Tables so you know what the params are:
  CREATE TABLE donor (idN INTEGER, amount DOUBLE, purpose VARCHAR (1000));
 
@@ -12,10 +16,8 @@ active BOOLEAN, username VARCHAR (25), password VARCHAR (25));
 CREATE TABLE vets (idN INTEGER, first VARCHAR (30), middle VARCHAR (30), last VARCHAR (40), branch VARCHAR (30), rank VARCHAR (30), activeD VARCHAR (60), phoneNum VARCHAR (30), email VARCHAR (40), 
 dolcu VARCHAR (20), username VARCHAR (25), password VARCHAR (25));
  
- Additional Notes around the functions. Let me know if you have questions*/
+ Additional Notes around the functions. Let me know if you have questions-->
 
-<html>
-<body>
 TESTING
 <form method="post" enctype="multipart/form-data">
         <input type="submit" value="Add" name="add">
