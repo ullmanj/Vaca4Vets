@@ -85,7 +85,13 @@ if (isset($_POST['createVet']))
 		{
 			if($_POST['password'] === $_POST['password2'])
 			{
-    			$array = array("idN" => 46, "first" => '\'' . $_POST['firstname'] . '\'', "middle" => '\'' . $_POST['middlename'] . '\'', "last" => '\'' . $_POST['lastname'] . '\'', "branch" => '\'' . $_POST['branch'] . '\'', 
+				$newId = 0;
+				do
+				{
+					$newIdTemp = rand(100000, 1000000);
+					$newId = $newIdTemp;
+				}while(duplicateCol($newIdTemp, 'idN', 'vets'));
+    			$array = array("idN" => $newId, "first" => '\'' . $_POST['firstname'] . '\'', "middle" => '\'' . $_POST['middlename'] . '\'', "last" => '\'' . $_POST['lastname'] . '\'', "branch" => '\'' . $_POST['branch'] . '\'', 
 				"rank" => '\'' . $_POST['rank'] . '\'', "activeD" => '\'' . $_POST['aD'] . '\'', "phoneNum" => '\'' . $_POST['phone'] . '\'', "email" => '\'' . $_POST['email'] . '\'', "dolcu" => '\'NEVER\'', 
 				"username" => '\'' . $_POST['username'] . '\'', "password" => '\'' . $_POST['password'] . '\'');
     //adds vet to table: input1 is the column names in order (see above), input2 is the values: strings need to be encompased by single quotes
