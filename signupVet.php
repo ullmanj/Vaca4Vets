@@ -90,7 +90,7 @@ if (isset($_POST['createVet']))
   			}
   			else
   			{
-  				echo 'Passwords are not the same'
+  				echo 'Passwords are not the same';
   			}
   		}
   		else
