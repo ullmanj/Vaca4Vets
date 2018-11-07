@@ -81,7 +81,7 @@ if (isset($_POST['createVet']))
 {
 	if($_POST['username'] != "" && $_POST['aD'] != "" && $_POST['firstname'] != "" && $_POST['lastname'] != "" && $_POST['rank'] != "" && $_POST['branch'] != "" && $_POST['email'] != "" &&  $_POST['phone'] != "" && $_POST['password'] != "" && $_POST['password2'] != "")
 	{
-		if(duplicateCol($_POST['username'], 'username', 'vets'))
+		if(!duplicateCol($_POST['username'], 'username', 'vets'))
 		{
 			if($_POST['password'] === $_POST['password2'])
 			{
@@ -90,7 +90,7 @@ if (isset($_POST['createVet']))
 				{
 					$newIdTemp = rand(100000, 1000000);
 					$newId = $newIdTemp;
-				}while(false);
+				}while(duplicateCol($newIdTemp, 'idN', 'vets'));
 				//duplicateCol($newIdTemp, 'idN', 'vets')
     			$array = array("idN" => $newId, "first" => '\'' . $_POST['firstname'] . '\'', "middle" => '\'' . $_POST['middlename'] . '\'', "last" => '\'' . $_POST['lastname'] . '\'', "branch" => '\'' . $_POST['branch'] . '\'', 
 				"rank" => '\'' . $_POST['rank'] . '\'', "activeD" => '\'' . $_POST['aD'] . '\'', "phoneNum" => '\'' . $_POST['phone'] . '\'', "email" => '\'' . $_POST['email'] . '\'', "dolcu" => '\'NEVER\'', 
