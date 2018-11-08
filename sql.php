@@ -155,7 +155,7 @@ function duplicateCol($val, $cols, $table)
       die("Connection failed: " . $conn->connect_error);
   } 
   
-  $sql = "SELECT *  FROM " . $table . " WHERE " . $cols . " = " . $val;
+  $sql = "SELECT *  FROM " . $table . " WHERE " . $cols . " = " . $val . ";";
 //  echo $sql;
   $result = $conn->query($sql);
   $i = false;
