@@ -83,33 +83,40 @@ if (isset($_POST['createVet']))
 	{
 		if(!duplicateCol($_POST['username'], 'username', 'vets'))
 		{
-			if($_POST['password'] === $_POST['password2'])
+			if(!duplicateCol($_POST['email'], 'email', 'vets'))
 			{
-				$newId = 0;
-				do
+				if($_POST['password'] === $_POST['password2'])
 				{
-					$newIdTemp = rand(100000, 1000000);
-					$newId = $newIdTemp;
-				}while(duplicateCol($newIdTemp, 'idN', 'vets'));
-				//duplicateCol($newIdTemp, 'idN', 'vets')
-    			$array = array("idN" => $newId, "first" => '\'' . $_POST['firstname'] . '\'', "middle" => '\'' . $_POST['middlename'] . '\'', "last" => '\'' . $_POST['lastname'] . '\'', "branch" => '\'' . $_POST['branch'] . '\'', 
-				"rank" => '\'' . $_POST['rank'] . '\'', "activeD" => '\'' . $_POST['aD'] . '\'', "phoneNum" => '\'' . $_POST['phone'] . '\'', "email" => '\'' . $_POST['email'] . '\'', "dolcu" => '\'NEVER\'', 
-				"username" => '\'' . $_POST['username'] . '\'', "password" => '\'' . $_POST['password'] . '\'');
+					$newId = 0;
+					do
+					{
+						$newIdTemp = rand(100000, 1000000);
+						$newId = $newIdTemp;
+					}while(duplicateCol($newIdTemp, 'idN', 'vets'));
+					//duplicateCol($newIdTemp, 'idN', 'vets')
+    				$array = array("idN" => $newId, "first" => '\'' . $_POST['firstname'] . '\'', "middle" => '\'' . $_POST['middlename'] . '\'', "last" => '\'' . $_POST['lastname'] . '\'', "branch" => '\'' . $_POST['branch'] . '\'', 
+					"rank" => '\'' . $_POST['rank'] . '\'', "activeD" => '\'' . $_POST['aD'] . '\'', "phoneNum" => '\'' . $_POST['phone'] . '\'', "email" => '\'' . $_POST['email'] . '\'', "dolcu" => '\'NEVER\'', 
+					"username" => '\'' . $_POST['username'] . '\'', "password" => '\'' . $_POST['password'] . '\'');
     //adds vet to table: input1 is the column names in order (see above), input2 is the values: strings need to be encompased by single quotes
     //$input1 = "idN, first, middle, last, branch, rank, activeD, phoneNum, email, dolcu, username, password";
     //$input2 = "46, 'Steven', 'Rohan', 'Mcguilligan', 'Marines', 'Gunnery Sergeant', 'November 20, 2014 - PRESENT', '1-011-101-1000', 'steven@mcguilligan.net', 'NEVER', 'StevenMcguilligan1', 
-				if(addToTable('vets', $array, 12))
-  				{
-   		 			echo 'Added';
+					if(addToTable('vets', $array, 12))
+  					{
+   		 				echo 'Added';
+  					}
+ 	 				else
+  					{
+  		 				echo 'Error Adding';
+  					}
   				}
- 	 			else
+  				else
   				{
-  		 			echo 'Error Adding';
+  					echo 'Passwords are not the same';
   				}
   			}
   			else
   			{
-  				echo 'Passwords are not the same';
+  				echo 'Email is already used for another account';
   			}
   		}
   		else

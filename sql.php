@@ -75,7 +75,7 @@ if(isset($_POST['printc']))
         //the string to put in to find values
         //$inputA = "idN, first, middle, last, branch, rank";
       //$inputA = array("idN", "first", "middle", "last", "branch", "rank");
-      selectCol($_POST['pCV'], "vets", ";");
+      selectCol($_POST['pCV'], "vets", ";", "idN");
     }
     //sample for deleting a row by value in a column: example: delete user in vets whose id is 17382
 if(isset($_POST['delc']))
@@ -119,7 +119,7 @@ $mysqli = new mysqli("localhost", "root", "briggs-test", "V4V");
   //* for all, commas for multiple
   //order is optional: semicolon for nothing,  ORDER BY row
   //arr is for all of the cols
-function selectCol($cols, $table, $order)
+function selectCol($colV, $table, $order, $col)
 {
     //$arr = array();
     //$arr = explode(', ', $cols)
@@ -129,19 +129,13 @@ function selectCol($cols, $table, $order)
       die("Connection failed: " . $conn->connect_error);
   } 
   
-  $sql = "SELECT *  FROM " . $table . " WHERE idN = " . $cols . $order;
+  $sql = "SELECT *  FROM " . $table . " WHERE " . $col . " = " . $colV . $order;
 //  echo $sql;
   $result = $conn->query($sql);
   
   if ($result->num_rows > 0) {
       // output data of each row
       while($row = $result->fetch_assoc()) {
-        //for($y = 0; $y < $num; $y++)
-
-        //{
-          //  echo "<b>" . $arr[$y] . "</b>: " . $row[$arr[$y]] . "<br>";
-        //}
-        //echo "<br>";
         var_dump($array);
         var_dump($row);
         return array_combine($arr, $row);
