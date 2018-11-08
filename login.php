@@ -45,6 +45,10 @@ if(isset($_POST['login']))
 		echo 'Missing Info';
 	}
 }
+else
+{
+	echo 'idk';
+}
 
 
 ?>
