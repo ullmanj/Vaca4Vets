@@ -18,7 +18,7 @@
       <input type="text" name="email" placeholder="john@adams.com"><br><br>
       Password:<br>
       <input type="password" name="password"><br><br>
-      <input type="submit" value="Submit" name="login">
+      <input type="submit" value="Submit" name="signin">
     </form>
 	
     <p class="padleft"><button type="button"><b>Continue ></b></button></p>
@@ -27,18 +27,19 @@
 <?php
 include 'sql.php';
 
-if(isset($_POST['login']))
+if(isset($_POST['signin']))
 {
 	if($_POST['email'] != "" && $_POST['password'] != "")
 	{
-		if(selectCol($_POST['email'], 'vets', ';', 'email')['password'] == $_POST['password'])
+		echo selectCol($_POST['email'], 'vets', ';', 'email')['password'];
+		/*if(selectCol($_POST['email'], 'vets', ';', 'email')['password'] == $_POST['password'])
 		{
 			echo 'Proper credentials';
 		}
 		else
 		{
 			echo 'username and password dont match';
-		}
+		}*/
 	}
 	else
 	{
@@ -47,7 +48,7 @@ if(isset($_POST['login']))
 }
 else
 {
-	echo 'idk';
+	echo 'idk' . $_POST['signin'];
 }
 
 
