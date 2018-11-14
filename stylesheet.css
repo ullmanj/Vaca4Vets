@@ -206,7 +206,7 @@ p.homecap {
   margin-top: -15px;
 }
 
-button {
+submit {
   border: none;
   text-decoration: none;
   background-color: #9FBDDA;
@@ -217,7 +217,7 @@ button {
   border-radius: 5px;
 }
 
-button:hover {
+submit:hover {
   background-color: #8FA5D6;
 }
 
