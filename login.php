@@ -35,6 +35,7 @@ if(isset($_POST['signin']))
 		if(selectCol('\'' . $_POST['email'] . '\'', 'vets', ';', 'email', 'password') == $_POST['password'])
 		{
 			echo 'Proper credentials';
+			setcookie("signedIn", selectCol('\'' . $_POST['email'] . '\'', 'vets', ';', 'email', 'idN'), time()+3600);
 		}
 		else
 		{
@@ -46,9 +47,13 @@ if(isset($_POST['signin']))
 		echo 'Missing Info';
 	}
 }
+else if($_COOKIE["signedIn"] != 0)
+{
+	echo 'signed in';
+}
 else
 {
-	echo 'idk' . $_POST['signin'];
+	echo 'noo';
 }
 
 
