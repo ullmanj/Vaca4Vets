@@ -138,7 +138,7 @@ function selectCol($colV, $table, $order, $col)
       while($row = $result->fetch_assoc()) {
        // var_dump($array);
        // var_dump($row);
-        return array_combine($arr, $row);
+        return $row;
       }
   } else {
       echo "0 results";
