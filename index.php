@@ -7,13 +7,13 @@
 
   <header>
     <h2>V4V</h2>
-    <p><a class="navlink" href="login.html">LOG IN</a></p>
+    <p><a class="navlink" href="login.php">LOG IN</a></p>
   </header>
 
  <body class=first>
    <p class=center1>Welcome to <i>Vacations for Veterans</i></p>
    <br>
-   <p class=center2><mark style="background-color:#FFFFFF">Are you a <a href=signupVet.html>Veteran</a> or a <a href=signupVend.html>Vendor</a>?</mark></p>
+   <p class=center2><mark style="background-color:#FFFFFF">Are you a <a href=signupVet.php>Veteran</a> or a <a href=signupVend.php>Vendor</a>?</mark></p>
 </body>
 <footer>
 </footer>
