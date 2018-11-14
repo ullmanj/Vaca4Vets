@@ -213,10 +213,10 @@ input[type="submit"] {
   font-family: 'Lato', sans-serif;
   font-size: 20px;
   font-weight: 400px;
-  padding: 20px 10px;
+  padding-top: 10px;
   border-radius: 5px;
   text-align: center;
-  width: 100px;
+  width: 120px;
   color: #041958;
 }
 
