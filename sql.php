@@ -136,8 +136,8 @@ function selectCol($colV, $table, $order, $col)
   if ($result->num_rows > 0) {
       // output data of each row
       while($row = $result->fetch_assoc()) {
-        var_dump($array);
-        var_dump($row);
+       // var_dump($array);
+       // var_dump($row);
         return array_combine($arr, $row);
       }
   } else {
