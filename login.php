@@ -31,7 +31,7 @@ if(isset($_POST['signin']))
 {
 	if($_POST['email'] != "" && $_POST['password'] != "")
 	{
-		echo selectCol('steven@mcguilligan.net'/*$_POST['email']*/, 'vets', ';', 'email');
+		echo selectCol('\'steven@mcguilligan.net\''/*$_POST['email']*/, 'vets', ';', 'email');
 		/*if(selectCol($_POST['email'], 'vets', ';', 'email')['password'] == $_POST['password'])
 		{
 			echo 'Proper credentials';
