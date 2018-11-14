@@ -75,7 +75,7 @@ if(isset($_POST['printc']))
         //the string to put in to find values
         //$inputA = "idN, first, middle, last, branch, rank";
       //$inputA = array("idN", "first", "middle", "last", "branch", "rank");
-      selectCol($_POST['pCV'], "vets", ";", "idN");
+      selectCol($_POST['pCV'], "vets", ";", "idN", "first");
     }
     //sample for deleting a row by value in a column: example: delete user in vets whose id is 17382
 if(isset($_POST['delc']))
@@ -119,7 +119,7 @@ $mysqli = new mysqli("localhost", "root", "briggs-test", "V4V");
   //* for all, commas for multiple
   //order is optional: semicolon for nothing,  ORDER BY row
   //arr is for all of the cols
-function selectCol($colV, $table, $order, $col)
+function selectCol($colV, $table, $order, $col, $key)
 {
     //$arr = array();
     //$arr = explode(', ', $cols)
@@ -138,7 +138,7 @@ function selectCol($colV, $table, $order, $col)
       while($row = $result->fetch_assoc()) {
        // var_dump($array);
        // var_dump($row);
-        return $row;
+        return $row[$key];
       }
   } else {
       echo "0 results";
