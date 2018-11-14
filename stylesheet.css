@@ -206,7 +206,7 @@ p.homecap {
   margin-top: -15px;
 }
 
-submit {
+input[type="submit"] {
   border: none;
   text-decoration: none;
   background-color: #9FBDDA;
@@ -217,7 +217,7 @@ submit {
   border-radius: 5px;
 }
 
-submit:hover {
+input[type="submit"]:hover {
   background-color: #8FA5D6;
 }
 
