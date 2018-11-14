@@ -20,9 +20,8 @@
 </html>
 
 <!--NOTES:
--placeholder in sign up/log in pages vs using "value"
 -LOG IN and other nav headers on the same line as V4V
 -logo to deal with
--V4V in left corner on home page
--remember aspect ratio for home images is 113 x 75 (times by 2.8 each atm)
+-V4V in left corner on home page... search must float right!!!
+-remember aspect ratio for home images is 113 x 75 (times by 2.8 for each atm) (791 x 525 for listing page)
 -->
