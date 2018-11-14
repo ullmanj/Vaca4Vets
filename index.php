@@ -2,7 +2,7 @@
   <head>
     <title>Vacations for Veterans</title>
     <link href="https://fonts.googleapis.com/css?family=Lato:300,400" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="CSS/styles.css">
+    <link rel="stylesheet" type="text/css" href="stylesheet.css">
   </head>
 
   <header>
