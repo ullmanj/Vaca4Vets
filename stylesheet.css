@@ -215,6 +215,9 @@ input[type="submit"] {
   font-weight: 400px;
   padding: 20px 10px;
   border-radius: 5px;
+  text-align: center;
+  width: 100px
+  color: #041958;
 }
 
 input[type="submit"]:hover {
