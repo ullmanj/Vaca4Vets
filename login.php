@@ -35,7 +35,7 @@ if(isset($_POST['signin']))
 		if(selectCol('\'' . $_POST['email'] . '\'', 'vets', ';', 'email', 'password') == $_POST['password'])
 		{
 			echo 'Proper credentials';
-			setcookie("signedIn", selectCol('\'' . $_POST['email'] . '\'', 'vets', ';', 'email', 'idN'), time()+3600);
+			setcookie("signedIn", selectCol('\'' . $_POST['email'] . '\'', 'vets', ';', 'email', 'idN'), time()+60);
 		}
 		else
 		{
