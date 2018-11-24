@@ -123,7 +123,7 @@ form {
   font-size: 20px;
 }
 
-table.pad {
+/*table.pad {
   border: none;
   padding-left: 100px;
   padding-bottom: 10px;
@@ -157,6 +157,11 @@ table.centered {
   margin-left: auto;
   margin-right: auto;
   margin-bottom: none;
+}*/
+.grid {
+   display: grid;
+  /* define the number of grid columns */
+  grid-template-columns: repeat( auto-fill, minmax(316px, 1fr) );
 }
 
 .notform {
@@ -173,25 +178,46 @@ table.centered {
   padding-left: 100px;
   padding-bottom: 20px;
 }
-
-img.home {
+/*------------------------------*/
+/*img.home {
   width: 316px;
   height: 210px;
   margin-right: 10px;
   margin-top: 10px;
   margin-left: 10px;
+}*/
+.blurb img {
+  width: 316px;
+  height: 210px;
+  background-color: inherit;
 }
 
-div.caption {
+/*div.caption {
   background-color: white;
   width: 316px;
   height: 80px;
   margin-left: 10px;
   padding-top: -25px;
+}*/
+.blurb {
+  background-color: white;
+  width: 316px;
+  margin-bottom: 10px;
+  margin-top: 10px;
+  margin-right: auto;
+  margin-left: auto;
+  line-height: 10px;
 }
 
-p.homecap {
+/*p.homecap {
 
+  color: black;
+  font-weight: 400;
+  margin: none;
+  Padding: none;
+  text-decoration: underline;
+}*/
+.blurb href p {
   color: black;
   font-weight: 400;
   margin: none;
@@ -199,13 +225,18 @@ p.homecap {
   text-decoration: underline;
 }
 
-.capdetail {
+/*.capdetail {
   color: black;
   font-weight: 300;
   font-size: 15px;
   margin-top: -15px;
+}*/
+.blurb p {
+  color: black;
+  font-weight: 300;
+  font-size: 15px;
 }
-
+/*------------------------------*/
 input[type="submit"] {
   border: none;
   text-decoration: none;
