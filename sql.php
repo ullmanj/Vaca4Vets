@@ -98,7 +98,7 @@ if(isset($_POST['delc']))
         $in2 = $in2 . $i1[key($i1)];
 echo "Thing1: " . $in1;
 echo "<br>Thing2:" . $in2 . "<br>";
-$mysqli = new mysqli("localhost", "root", "briggs-test", "V4V");
+$mysqli = new mysqli("localhost", "webuser", "YPEQ9ZGxAsa6GSTZr55M2K47c", "V4V");
         
         // Check connection
         if($mysqli === false){
@@ -123,7 +123,7 @@ function selectCol($colV, $table, $order, $col, $key)
 {
     //$arr = array();
     //$arr = explode(', ', $cols)
-  $conn = new mysqli("localhost", "root", "briggs-test", "V4V");
+  $mysqli = new mysqli("localhost", "webuser", "YPEQ9ZGxAsa6GSTZr55M2K47c", "V4V"); //root, briggs-test
   // Check connection
   if ($conn->connect_error) {
       die("Connection failed: " . $conn->connect_error);
@@ -149,7 +149,7 @@ function duplicateCol($val, $cols, $table)
 {
     //$arr = array();
     //$arr = explode(', ', $cols)
-  $conn = new mysqli("localhost", "root", "briggs-test", "V4V");
+  $mysqli = new mysqli("localhost", "webuser", "YPEQ9ZGxAsa6GSTZr55M2K47c", "V4V");
   // Check connection
   if ($conn->connect_error) {
       die("Connection failed: " . $conn->connect_error);
@@ -172,7 +172,7 @@ function duplicateCol($val, $cols, $table)
 }
 function delRow($table, $val)
   {
-    $conn = new mysqli("localhost", "root", "briggs-test", "V4V");
+    $mysqli = new mysqli("localhost", "webuser", "YPEQ9ZGxAsa6GSTZr55M2K47c", "V4V");
   // Check connection
   if ($conn->connect_error) {
       die("Connection failed: " . $conn->connect_error);
