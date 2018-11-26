@@ -5,7 +5,7 @@
 define("HOST", "localhost");     // The host you want to connect to.
 define("USER", "web_user");    // The database username. 
 define("PASSWORD", "YPEQ9ZGxAsa6GSTZr55M2K47c");    // The database password. 
-define("DATABASE", "secure_login");    // The database name.
+define("DATABASE", "`secure_login`");    // The database name.
  
 define("CAN_REGISTER", "any");
 define("DEFAULT_ROLE", "member");

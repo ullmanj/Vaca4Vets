@@ -2,7 +2,7 @@
 include_once 'db_connect.php';
 include_once 'psl-config.php';
  
-$error_msg = "";
+$error_msg = "AHHHHHHH!";
  
 if (isset($_POST['firstname'], $_POST['middlename'], $_POST['lastname'], $_POST['rank'], $_POST['branch'], $_POST['aD'], $_POST['email'], $_POST['phone'], $_POST['username'], $_POST['p'])) {
     // Sanitize and validate the data passed in
