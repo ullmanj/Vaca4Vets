@@ -82,6 +82,10 @@ function login($email, $password, $mysqli) {
             return 'no user';
         }
     }
+    else
+    {
+    	return 'error with sql';
+    }
 }
 function checkbrute($user_id, $mysqli) {
     // Get timestamp of current time 
