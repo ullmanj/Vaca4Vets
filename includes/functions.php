@@ -279,7 +279,7 @@ function login($email, $password, $mysqli) {
                         header("Location: ../error.php?err=Database error: login_attempts");
                         exit();
                     }
-                    echo 'incorrect pass';
+                    echo 'incorrect pass:\nYou entered: ' . $password . '\n the pass was: ' . $db_password;
                     return false;
                 }
             }
