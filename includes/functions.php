@@ -21,12 +21,13 @@ function sec_session_start() {
 }
 /*SELECT idN, username, password FROM vets WHERE email = 'test@example.com' LIMIT 1*/
 
-function login($email, $password, $mysqli) {
-    // Using prepared statements means that SQL injection is not possible. 
-    /*if (*/$stmt = $mysqli->prepare("SELECT idN, username, password 
+function login($email, $password/*, $mysqli*/) {//login('test@example.com', 6ZaxN2Vzm9NUJT2y, new mysqli(localhost, web_user, YPEQ9ZGxAsa6GSTZr55M2K47c, `secure_login`));
+    // Using prepared statements means that SQL injection is not possible. //;
+    echo 'hello';
+    /*if ($stmt = $mysqli->prepare("SELECT idN, username, password 
         FROM vets
        WHERE email = ?
-        LIMIT 1");/*) {*/
+        LIMIT 1");) {
         $stmt->bind_param('s', $email);  // Bind "$email" to parameter.
         $stmt->execute();    // Execute the prepared query.
         $stmt->store_result();
@@ -82,7 +83,7 @@ function login($email, $password, $mysqli) {
             echo 'No user';
             //return false;
             return 'no user';
-        }
+        }*/
     /*}
     else
     {
