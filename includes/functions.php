@@ -84,7 +84,7 @@ function login($email, $password, $mysqli) {
     }
     else
     {
-    	return 'error with sql';
+    	return 'error with sql' . $stmt;
     }
 }
 function checkbrute($user_id, $mysqli) {
