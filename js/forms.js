@@ -39,7 +39,7 @@ function regformhash(form, uid, email, password, conf) {
     // The check is duplicated below, but this is included to give more
     // specific guidance to the user
     if (password.value.length < 6) {
-        alert('Passwords must be at least 6 characters long.  Please try again');
+        alert('Passwords must be at least 6 characters long. You have: ' + password.value.length+ ' Please try again');
         form.password.focus();
         return false;
     }
