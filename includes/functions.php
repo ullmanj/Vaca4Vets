@@ -23,10 +23,10 @@ function sec_session_start() {
 
 function login($email, $password, $mysqli) {
     // Using prepared statements means that SQL injection is not possible. 
-    if ($stmt = $mysqli->prepare("SELECT idN, username, password 
+    /*if (*/$stmt = $mysqli->prepare("SELECT idN, username, password 
         FROM vets
        WHERE email = ?
-        LIMIT 1")) {
+        LIMIT 1")/*) {*/
         $stmt->bind_param('s', $email);  // Bind "$email" to parameter.
         $stmt->execute();    // Execute the prepared query.
         $stmt->store_result();
@@ -83,14 +83,14 @@ function login($email, $password, $mysqli) {
             //return false;
             return 'no user';
         }
-    }
+    /*}
     else
     {
     	return 'error with sql' . $mysqli->prepare("SELECT idN, username, password 
         FROM vets
        WHERE email = ?
         LIMIT 1");
-    }
+    }*/
 }
 function checkbrute($user_id, $mysqli) {
     // Get timestamp of current time 
