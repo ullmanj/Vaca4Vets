@@ -232,6 +232,7 @@ function sec_session_start() {
     session_regenerate_id();    // regenerated the session, delete the old one. 
 }
 function login($email, $password, $mysqli) {
+	$mysqli = new mysqli(HOST, USER, PASSWORD, DATABASE);
     // Using prepared statements means that SQL injection is not possible. 
     if ($stmt = $mysqli->prepare("SELECT idN, username, password, salt 
 				  FROM vets 
