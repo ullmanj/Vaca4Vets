@@ -150,7 +150,6 @@ function login_check($mysqli) {
     }
 }
 function esc_url($url) {
- 	echo '<script>alert(\' test3 \');</script>';
     if ('' == $url) {
         return $url;
     }
