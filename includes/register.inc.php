@@ -35,7 +35,7 @@ if (isset($_POST['firstname'], $_POST['middlename'], $_POST['lastname'], $_POST[
     // breaking these rules.
     //
  
-    $prep_stmt = "SELECT id FROM vets WHERE email = ? LIMIT 1";
+    $prep_stmt = "SELECT idN FROM vets WHERE email = ? LIMIT 1";
     $stmt = $mysqli->prepare($prep_stmt);
  
    // check existing email  
@@ -55,7 +55,7 @@ if (isset($_POST['firstname'], $_POST['middlename'], $_POST['lastname'], $_POST[
     }
  
     // check existing username
-    $prep_stmt = "SELECT id FROM vets WHERE username = ? LIMIT 1";
+    $prep_stmt = "SELECT idN FROM vets WHERE username = ? LIMIT 1";
     $stmt = $mysqli->prepare($prep_stmt);
  
     if ($stmt) {
