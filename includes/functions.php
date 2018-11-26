@@ -68,11 +68,13 @@ function login($email, $password, $mysqli) {
                     $now = time();
                     $mysqli->query("INSERT INTO login_attempts(user_id, time)
                                     VALUES ('$user_id', '$now')");
+                                    echo 'wrong password. actual is ' . $db_password . ' you entered ' . $password;
                     return false;
                 }
             }
         } else {
             // No user exists.
+            echo 'No user';
             return false;
         }
     }
