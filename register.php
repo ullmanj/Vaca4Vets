@@ -101,15 +101,8 @@ include_once 'includes/functions.php';
       <input type="button" 
                    value="Register" 
                    onclick="return regformhash(this.form,
-                   		this.form.firstname,
-                   		this.form.middlename,
-                   		this.form.lastname,
-                   		this.form.rank,
-                   		this.form.branch,
-                   		this.form.aD,
-                        this.form.email,
-                        this.form.phone,
                     	this.form.username,
+                        this.form.email,
                         this.form.password,
                         this.form.confirmpwd);" /> 
       </td>
