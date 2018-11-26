@@ -21,7 +21,7 @@ function sec_session_start() {
 }
 /*SELECT idN, username, password FROM vets WHERE email = 'test@example.com' LIMIT 1*/
 
-function login($email, $password/*, $mysqli*/) {//login('test@example.com', 6ZaxN2Vzm9NUJT2y, new mysqli(localhost, web_user, YPEQ9ZGxAsa6GSTZr55M2K47c, `secure_login`));
+function login($email, $password, $mysqli) {//login('test@example.com', 6ZaxN2Vzm9NUJT2y, new mysqli(localhost, web_user, YPEQ9ZGxAsa6GSTZr55M2K47c, `secure_login`));
     // Using prepared statements means that SQL injection is not possible. //;
     //$mysqli = new mysqli('localhost', 'web_user', 'YPEQ9ZGxAsa6GSTZr55M2K47c', '`secure_login`');
     $mysqli = new mysqli('localhost', 'root', 'briggs-test', 'secure_login');
