@@ -13,9 +13,35 @@ CREATE TABLE vacHome (idN INTEGER, address VARCHAR (100), REL VARCHAR (100), des
 CREATE TABLE vendor (idN INTEGER, first VARCHAR (30), middle VARCHAR (30), last VARCHAR (40), typeId VARCHAR (20), phoneNum VARCHAR (30), email VARCHAR (40), 
 active BOOLEAN, username VARCHAR (25), password VARCHAR (25));
 
-CREATE TABLE vets (idN INTEGER, first VARCHAR (30), middle VARCHAR (30), last VARCHAR (40), branch VARCHAR (30), rank VARCHAR (30), activeD VARCHAR (60), phoneNum VARCHAR (30), email VARCHAR (40), 
-dolcu VARCHAR (20), username VARCHAR (25), password VARCHAR (25));
- 
+CREATE TABLE vets (idN INTEGER, first VARCHAR (30), middle VARCHAR (30), last VARCHAR (40), branch VARCHAR (30), rank VARCHAR (30), activeD VARCHAR (60), phoneNum VARCHAR (30), email VARCHAR (40), dolcu VARCHAR (20), username VARCHAR (25), password VARCHAR (25));
+CREATE TABLE `secure_login` . `vets` (
+	`idN` INTEGER NOT NULL AUTO_INCREMENT PRIMARY KEY, 
+	`first` VARCHAR (30) NOT NULL, 
+	`middle` VARCHAR (30) NOT NULL, 
+	`last` VARCHAR (40) NOT NULL, 
+	`branch` VARCHAR (30) NOT NULL, 
+	`rank` VARCHAR (30) NOT NULL, 
+	`activeD` VARCHAR (60) NOT NULL, 
+	`phoneNum` VARCHAR (30) NOT NULL, 
+	`email` VARCHAR (40) NOT NULL, 
+	`dolcu` VARCHAR (20) NOT NULL, 
+	`username` VARCHAR (25) NOT NULL, 
+	`password` VARCHAR (128) NOT NULL
+) ENGINE = InnoDB;
+INSERT INTO `secure_login`.`vets` VALUES(
+	1, 
+	'Test', 
+	'M', 
+	'User', 
+	'Marines', 
+	'General', 
+	'Nov 2014-PRESENT', 
+	'1-234-567-8900', 
+	'test@example.com', 
+	'NEVER', 
+	'test_user', 
+	'$2y$10$IrzYJi10j3Jy/K6jzSLQtOLif1wEZqTRQoK3DcS3jdnFEhL4fWM4G');
+
  Additional Notes around the functions. Let me know if you have questions-->
 
 TESTING

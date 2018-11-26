@@ -13,8 +13,9 @@
   <body>
     <p class=small><a href="signupVend.php">Sign up as a Vendor</a></p>
     <p class="left1">Please sign up as a <i>Veteran:</i></p>
-    <table class="pad">
+    
     <form method="post" enctype="multipart/form-data"> <!-- TO WRAP ALL THIS: -->
+    <table class="pad">
       <tr>
         <td>First name:<br>
           <input type="text" name="firstname" placeholder="John"><br><br>
