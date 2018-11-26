@@ -41,7 +41,8 @@ function login($email, $password, $mysqli) {
                 // Account is locked 
                 // Send an email to user saying their account is locked
                 echo 'account locked';
-                return false;
+                //return false;
+                return 'account locked';
             } else {
                 // Check if the password in the database matches
                 // the password the user submitted. We are using
@@ -61,7 +62,8 @@ function login($email, $password, $mysqli) {
                     $_SESSION['login_string'] = hash('sha512', 
                               $db_password . $user_browser);
                     // Login successful.
-                    return true;
+                    //return true;
+                    return 'success';
                 } else {
                     // Password is not correct
                     // We record this attempt in the database
@@ -69,13 +71,15 @@ function login($email, $password, $mysqli) {
                     $mysqli->query("INSERT INTO login_attempts(user_id, time)
                                     VALUES ('$user_id', '$now')");
                                     echo 'wrong password. actual is ' . $db_password . ' you entered ' . $password;
-                    return false;
+                    //return false;
+                    return 'wrong password. actual is ' . $db_password . ' you entered ' . $password;
                 }
             }
         } else {
             // No user exists.
             echo 'No user';
-            return false;
+            //return false;
+            return 'no user';
         }
     }
 }
