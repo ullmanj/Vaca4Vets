@@ -84,7 +84,7 @@ function login($email, $password/*, $mysqli*/) {//login('test@example.com', 6Zax
             //return false;
             return 'no user';
         }
-    /*}
+    }/*
     else
     {
     	return 'error with sql' . $mysqli->prepare("SELECT idN, username, password 
