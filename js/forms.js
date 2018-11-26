@@ -80,6 +80,8 @@ function regformhash(form, firstname, middlename, lastname, rank, branch, aD, em
     conf.value = "";
  
     // Finally submit the form. 
-    form.submit();
+    alert('TEST 1');
+	form.submit();
+    alert('TEST 2');
     return true;
 }
