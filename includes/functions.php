@@ -250,7 +250,8 @@ function login($email, $password, $mysqli) {
             // from too many login attempts 
             if (checkbrute($user_id, $mysqli) == true) {
                 // Account is locked 
-                // Send an email to user saying their account is locked 
+                // Send an email to user saying their account is locked
+                echo 'locked'; 
                 return false;
             } else {
                 // Check if the password in the database matches 
@@ -267,6 +268,7 @@ function login($email, $password, $mysqli) {
                     $_SESSION['username'] = $username;
                     $_SESSION['login_string'] = hash('sha512', $password . $user_browser);
                     // Login successful. 
+                    echo 'yay';
                     return true;
                 } else {
                     // Password is not correct 
@@ -277,15 +279,18 @@ function login($email, $password, $mysqli) {
                         header("Location: ../error.php?err=Database error: login_attempts");
                         exit();
                     }
+                    echo 'incorrect pass';
                     return false;
                 }
             }
         } else {
             // No user exists. 
+            echo 'No user';
             return false;
         }
     } else {
         // Could not create a prepared statement
+        echo 'cries';
         header("Location: ../error.php?err=Database error: cannot prepare statement");
         exit();
     }
