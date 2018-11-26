@@ -26,7 +26,7 @@ function login($email, $password, $mysqli) {
     /*if (*/$stmt = $mysqli->prepare("SELECT idN, username, password 
         FROM vets
        WHERE email = ?
-        LIMIT 1")/*) {*/
+        LIMIT 1");/*) {*/
         $stmt->bind_param('s', $email);  // Bind "$email" to parameter.
         $stmt->execute();    // Execute the prepared query.
         $stmt->store_result();
