@@ -81,8 +81,14 @@ if (isset($_POST['firstname'], $_POST['middlename'], $_POST['lastname'], $_POST[
         $password = password_hash($password, PASSWORD_BCRYPT);
  
         // Insert the new user into the database 
-        if ($insert_stmt = $mysqli->prepare("INSERT INTO vets (firstname, middlename, lastname, rank, branch, aD, email, phone, username, password) VALUES (?, ?, ?)")) {
-            $insert_stmt->bind_param('sss', $username, $email, $password);
+        
+        
+        
+        
+        
+        
+        if ($insert_stmt = $mysqli->prepare("INSERT INTO vets (firstname, middlename, lastname, rank, branch, aD, email, phone, username, password) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)")) {
+            $insert_stmt->bind_param('ssssssssss', $firstname, $middlename, $lastname, $rank, $branch, $aD, $email, $phone, $username, $password);
             // Execute the prepared query.
             if (! $insert_stmt->execute()) {
                 header('Location: ../error.php?err=Registration failure: INSERT');
