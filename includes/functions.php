@@ -36,7 +36,7 @@ function login($email, $password, $mysqli) {//login('test@example.com', 6ZaxN2Vz
         // get variables from result.
         $stmt->bind_result($user_id, $username, $db_password);
         $stmt->fetch();
- 
+ 		return $db_password;
         if ($stmt->num_rows == 1) {
             // If the user exists we check if the account is locked
             // from too many login attempts 
