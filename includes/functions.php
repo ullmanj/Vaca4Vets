@@ -27,7 +27,6 @@ function login($email, $password, $mysqli) {
         FROM vets
        WHERE email = ?
         LIMIT 1")) {
-        return 'test1';
         $stmt->bind_param('s', $email);  // Bind "$email" to parameter.
         $stmt->execute();    // Execute the prepared query.
         $stmt->store_result();
@@ -87,7 +86,10 @@ function login($email, $password, $mysqli) {
     }
     else
     {
-    	return 'error with sql' . $stmt;
+    	return 'error with sql' . $mysqli->prepare("SELECT idN, username, password 
+        FROM vets
+       WHERE email = ?
+        LIMIT 1");
     }
 }
 function checkbrute($user_id, $mysqli) {
