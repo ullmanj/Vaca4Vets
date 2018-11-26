@@ -170,7 +170,6 @@ function esc_url($url) {
  
     $url = str_replace('&amp;', '&#038;', $url);
     $url = str_replace("'", '&#039;', $url);
- echo '<script>alert(\' test4 \');</script>';
     if ($url[0] !== '/') {
         // We're only interested in relative links from $_SERVER['PHP_SELF']
         return '';
