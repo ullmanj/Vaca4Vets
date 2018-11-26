@@ -26,7 +26,7 @@ if (login_check($mysqli) == true) {
         ?> 
         <form action="includes/process_login.php" method="post" name="login_form">                      
             Email: <input type="text" name="email" />
-            Password: <input type="password" 
+            Password: <input type="text" 
                              name="password" 
                              id="password"/>
             <input type="button" 

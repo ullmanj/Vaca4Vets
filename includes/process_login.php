@@ -12,6 +12,7 @@ if (isset($_POST['email'], $_POST['p'])) {
         // Login success 
         header('Location: ../protected_page.php');
     } else {
+    	echo $result;
         // Login failed 
         header('Location: ../loginSec.php?error=1');
     }
