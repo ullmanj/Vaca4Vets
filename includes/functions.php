@@ -83,7 +83,7 @@ function login($email, $password/*, $mysqli*/) {//login('test@example.com', 6Zax
             echo 'No user';
             //return false;
             return 'no user';
-        }*/
+        }
     /*}
     else
     {
