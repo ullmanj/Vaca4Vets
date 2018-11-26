@@ -19,12 +19,15 @@ function sec_session_start() {
     session_start();            // Start the PHP session 
     session_regenerate_id();    // regenerated the session, delete the old one. 
 }
+/*SELECT idN, username, password FROM vets WHERE email = 'test@example.com' LIMIT 1*/
+
 function login($email, $password, $mysqli) {
     // Using prepared statements means that SQL injection is not possible. 
     if ($stmt = $mysqli->prepare("SELECT idN, username, password 
         FROM vets
        WHERE email = ?
         LIMIT 1")) {
+        return 'test1';
         $stmt->bind_param('s', $email);  // Bind "$email" to parameter.
         $stmt->execute();    // Execute the prepared query.
         $stmt->store_result();
