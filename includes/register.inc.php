@@ -2,9 +2,40 @@
 include_once 'db_connect.php';
 include_once 'psl-config.php';
  
-$error_msg = "AHHHHHHH!";
+ 
+  // Check connection
+  if ($conn->connect_error) {
+      die("Connection failed: " . $conn->connect_error);
+  } 
+  
+  $sql = "SELECT *  FROM vets";
+//  echo $sql;
+  $result = $conn->query($sql);
+  
+  if ($result->num_rows > 0) {
+      // output data of each row
+      while($row = $result->fetch_assoc()) {
+       // var_dump($array);
+       // var_dump($row);
+       $error_msg = $row;
+      }
+  } else {
+      $error_msg =  "0 results";
+  }
+  $conn->close();
+ 
+ 
+ 
+ 
+ 
+ 
+ 
  
 if (isset($_POST['firstname'], $_POST['middlename'], $_POST['lastname'], $_POST['rank'], $_POST['branch'], $_POST['aD'], $_POST['email'], $_POST['phone'], $_POST['username'], $_POST['p'])) {
+    
+    
+    
+    
     // Sanitize and validate the data passed in
     $firstname = filter_input(INPUT_POST, 'firstname', FILTER_SANITIZE_STRING);
     $middlename = filter_input(INPUT_POST, 'middlename', FILTER_SANITIZE_STRING);
@@ -94,9 +125,11 @@ if (isset($_POST['firstname'], $_POST['middlename'], $_POST['lastname'], $_POST[
             // Execute the prepared query.
             if (! $insert_stmt->execute()) {
                 header('Location: ../error.php?err=Registration failure: INSERT');
+                $error_msg = "NOOOO";
             }
             else
             {
+            $error_msg = "?";
             	//header('Location: ../register.php?err=idk');
             }
         }
@@ -106,14 +139,16 @@ if (isset($_POST['firstname'], $_POST['middlename'], $_POST['lastname'], $_POST[
             // Execute the prepared query.
             if (! $insert_stmt->execute()) {
                 header('Location: ../error.php?err=Registration failure: INSERT');
+                $error_msg = "NOOOO";
             }
             else
             {
             	header('Location: ../register.php?err=idk2');
+            	$error_msg = "idk";
             }
         }
         
-        
+        $error_msg = "YESSSSSSS!!!!!!";
         header('Location: ./home.html');
     }
 }
