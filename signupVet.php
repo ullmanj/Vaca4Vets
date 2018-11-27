@@ -103,6 +103,7 @@ if (isset($_POST['createVet']))
     //adds vet to table: input1 is the column names in order (see above), input2 is the values: strings need to be encompased by single quotes
     //$input1 = "idN, first, middle, last, branch, rank, activeD, phoneNum, email, dolcu, username, password";
     //$input2 = "46, 'Steven', 'Rohan', 'Mcguilligan', 'Marines', 'Gunnery Sergeant', 'November 20, 2014 - PRESENT', '1-011-101-1000', 'steven@mcguilligan.net', 'NEVER', 'StevenMcguilligan1', 
+    //array(46, 'Steven', 'Rohan', 'Mcguilligan', 'Marines', 'Gunnery Sergeant', 'November 20, 2014 - PRESENT', '1-011-101-1000', 'steven@mcguilligan.net', 'NEVER', 'StevenMcguilligan1', 'srohan111111111111');
 					if(addToTable('vets', $array, 12))
   					{
    		 				echo 'Added';
