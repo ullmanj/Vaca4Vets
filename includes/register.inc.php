@@ -1,6 +1,12 @@
 <?php
-
- $mysqli = new mysqli("localhost", "root", "briggs-test", "secure_login");
+ include_once 'db_connect.php';
+include_once 'psl-config.php';
+if (isset($_POST['firstname'], $_POST['middlename'], $_POST['lastname'], $_POST['rank'], $_POST['branch'], $_POST['aD'], $_POST['email'], $_POST['phone'], $_POST['username'], $_POST['p'])) {
+    
+    
+    
+    
+     $mysqli = new mysqli("localhost", "root", "briggs-test", "secure_login");
   // Check connection
   if ($conn->connect_error) {
       die("Connection failed: " . $conn->connect_error);
@@ -21,20 +27,12 @@
       $error_msg =  "0 results";
   }
   $conn->close();
- 
- 
-
-
- 
- /*
- include_once 'db_connect.php';
-include_once 'psl-config.php';
-if (isset($_POST['firstname'], $_POST['middlename'], $_POST['lastname'], $_POST['rank'], $_POST['branch'], $_POST['aD'], $_POST['email'], $_POST['phone'], $_POST['username'], $_POST['p'])) {
     
     
     
     
-    // Sanitize and validate the data passed in
+    
+    /*// Sanitize and validate the data passed in
     $firstname = filter_input(INPUT_POST, 'firstname', FILTER_SANITIZE_STRING);
     $middlename = filter_input(INPUT_POST, 'middlename', FILTER_SANITIZE_STRING);
     $lastname = filter_input(INPUT_POST, 'lastname', FILTER_SANITIZE_STRING);
@@ -148,6 +146,6 @@ if (isset($_POST['firstname'], $_POST['middlename'], $_POST['lastname'], $_POST[
         
         $error_msg = "YESSSSSSS!!!!!!";
         header('Location: ./home.html');
-    }
-}*/
+    }*/
+}
 ?>
