@@ -78,7 +78,9 @@ if (isset($_POST['firstname'], $_POST['middlename'], $_POST['lastname'], $_POST[
         // Create hashed password using the password_hash function.
         // This function salts it with a random salt and can be verified with
         // the password_verify function.
-        $password = password_hash($password, PASSWORD_BCRYPT);
+        $random_salt = hash('sha512', uniqid(openssl_random_pseudo_bytes(16), TRUE));
+        // Create salted password 
+        $password = hash('sha512', $password . $random_salt);
  
         // Insert the new user into the database 
         
@@ -87,8 +89,8 @@ if (isset($_POST['firstname'], $_POST['middlename'], $_POST['lastname'], $_POST[
         
         
         
-        if ($insert_stmt = $mysqli->prepare("INSERT INTO vets (firstname, middlename, lastname, rank, branch, aD, email, phone, username, password) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)")) {
-            $insert_stmt->bind_param('ssssssssss', $firstname, $middlename, $lastname, $rank, $branch, $aD, $email, $phone, $username, $password);
+        if ($insert_stmt = $mysqli->prepare("INSERT INTO vets (first, middle, last, branch, rank, activeD, phoneNum, email, dolcu, username, password, salt) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)")) {
+            $insert_stmt->bind_param('ssssssssssss', $firstname, $middlename, $lastname, $branch, $rank, $aD, $phone, $email, 'never', $username, $password, $random_salt);
             // Execute the prepared query.
             if (! $insert_stmt->execute()) {
                 header('Location: ../error.php?err=Registration failure: INSERT');
