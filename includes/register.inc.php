@@ -2,13 +2,13 @@
 include_once 'db_connect.php';
 include_once 'psl-config.php';
  
- 
+ $mysqli = new mysqli("localhost", "root", "briggs-test", "secure_login");
   // Check connection
   if ($conn->connect_error) {
       die("Connection failed: " . $conn->connect_error);
   } 
   
-  $sql = "SELECT *  FROM vets";
+  $sql = "SELECT * FROM vets";
 //  echo $sql;
   $result = $conn->query($sql);
   
