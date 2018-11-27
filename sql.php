@@ -194,18 +194,18 @@ function duplicateCol($val, $cols, $table)
   
   
   
-  $stmt = $conn->prepare('SELECT * FROM vets WHERE ? = ?');
+  /*$stmt = $conn->prepare('SELECT * FROM vets WHERE ? = ?');
 	$stmt->bind_param('ss', $cols, $val); // 's' specifies the variable type => 'string'
 
 	$stmt->execute();
 	
-	$result = $stmt->get_result();
+	$result = $stmt->get_result();*/
   
   
   
-  /*$sql = "SELECT *  FROM " . $table . " WHERE " . $cols . " = " . $val . ";";
+  $sql = "SELECT *  FROM " . $table . " WHERE " . $cols . " = " . $val . ";";
 //  echo $sql;
-  $result = $conn->query($sql);*/
+  $result = $conn->query($sql);
   $i = false;
   if ($result->num_rows > 0) {
       // output data of each row
