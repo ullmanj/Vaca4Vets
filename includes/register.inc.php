@@ -97,9 +97,23 @@ if (isset($_POST['firstname'], $_POST['middlename'], $_POST['lastname'], $_POST[
             }
             else
             {
-            	echo 'works?';
+            	//header('Location: ../register.php?err=idk');
             }
         }
+        
+        if ($insert_stmt = $mysqli->prepare("INSERT INTO vets (idN, first, middle, last, branch, rank, activeD, phoneNum, email, dolcu, username, password, salt) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)")) {
+            $insert_stmt->bind_param('sssssssssssss', 3, 'joe', 'joe', 'joe', 'joe', 'joe', 'joe', 'joe', 'joe@joe.com', 'never', 'joe', '00807432eae173f652f2064bdca1b61b290b52d40e429a7d295d76a71084aa96c0233b82f1feac45529e0726559645acaed6f3ae58a286b9f075916ebf66cacc', 'f9aab579fc1b41ed0c44fe4ecdbfcdb4cb99b9023abb241a6db833288f4eea3c02f76e0d35204a8695077dcf81932aa59006423976224be0390395bae152d4ef');
+            // Execute the prepared query.
+            if (! $insert_stmt->execute()) {
+                header('Location: ../error.php?err=Registration failure: INSERT');
+            }
+            else
+            {
+            	header('Location: ../register.php?err=idk2');
+            }
+        }
+        
+        
         header('Location: ./home.html');
     }
 }
