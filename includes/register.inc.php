@@ -89,8 +89,8 @@ if (isset($_POST['firstname'], $_POST['middlename'], $_POST['lastname'], $_POST[
         
         
         
-        if ($insert_stmt = $mysqli->prepare("INSERT INTO vets (first, middle, last, branch, rank, activeD, phoneNum, email, dolcu, username, password, salt) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)")) {
-            $insert_stmt->bind_param('ssssssssssss', $firstname, $middlename, $lastname, $branch, $rank, $aD, $phone, $email, 'never', $username, $password, $random_salt);
+        if ($insert_stmt = $mysqli->prepare("INSERT INTO vets (idN, first, middle, last, branch, rank, activeD, phoneNum, email, dolcu, username, password, salt) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)")) {
+            $insert_stmt->bind_param('sssssssssssss', 3, $firstname, $middlename, $lastname, $branch, $rank, $aD, $phone, $email, 'never', $username, $password, $random_salt);
             // Execute the prepared query.
             if (! $insert_stmt->execute()) {
                 header('Location: ../error.php?err=Registration failure: INSERT');
