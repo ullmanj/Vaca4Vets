@@ -125,7 +125,12 @@ if(isset($_POST['delc']))
         $in2 = $in2 . $i1[key($i1)];
 echo "Thing1: " . $in1;
 echo "<br>Thing2:" . $in2 . "<br>";
-$mysqli = new mysqli("localhost", "webuser", "YPEQ9ZGxAsa6GSTZr55M2K47c", "V4V");
+$mysqli = new mysqli("localhost", "root", "briggs-test", "V4V");
+        
+        
+        
+        
+        
         
         // Check connection
         if($mysqli === false){
@@ -150,7 +155,7 @@ function selectCol($colV, $table, $order, $col, $key)
 {
     //$arr = array();
     //$arr = explode(', ', $cols)
-  $mysqli = new mysqli("localhost", "webuser", "YPEQ9ZGxAsa6GSTZr55M2K47c", "V4V"); //root, briggs-test
+  $mysqli = new mysqli("localhost", "root", "briggs-test", "V4V"); //root, briggs-test
   // Check connection
   if ($conn->connect_error) {
       die("Connection failed: " . $conn->connect_error);
@@ -176,15 +181,31 @@ function duplicateCol($val, $cols, $table)
 {
     //$arr = array();
     //$arr = explode(', ', $cols)
-  $mysqli = new mysqli("localhost", "webuser", "YPEQ9ZGxAsa6GSTZr55M2K47c", "V4V");
+    
+    
+    
+    
+    
+  $mysqli = new mysqli("localhost", "root", "briggs-test", "V4V");
   // Check connection
   if ($conn->connect_error) {
       die("Connection failed: " . $conn->connect_error);
   } 
   
-  $sql = "SELECT *  FROM " . $table . " WHERE " . $cols . " = " . $val . ";";
+  
+  
+  $stmt = $conn->prepare('SELECT * FROM vets WHERE ? = ?');
+	$stmt->bind_param('ss', $cols, $val); // 's' specifies the variable type => 'string'
+
+	$stmt->execute();
+	
+	$result = $stmt->get_result();
+  
+  
+  
+  /*$sql = "SELECT *  FROM " . $table . " WHERE " . $cols . " = " . $val . ";";
 //  echo $sql;
-  $result = $conn->query($sql);
+  $result = $conn->query($sql);*/
   $i = false;
   if ($result->num_rows > 0) {
       // output data of each row
@@ -199,7 +220,7 @@ function duplicateCol($val, $cols, $table)
 }
 function delRow($table, $val)
   {
-    $mysqli = new mysqli("localhost", "webuser", "YPEQ9ZGxAsa6GSTZr55M2K47c", "V4V");
+    $mysqli = new mysqli("localhost", "root", "briggs-test", "V4V");
   // Check connection
   if ($conn->connect_error) {
       die("Connection failed: " . $conn->connect_error);
