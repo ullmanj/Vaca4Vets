@@ -137,8 +137,22 @@ echo "<br>Thing2:" . $in2 . "<br>";
       		die("Connection failed: " . $conn->connect_error);
   		} 
   		
-        $sql = "INSERT INTO " . $table . " (" . $in1 . ") VALUES (" . $in2 . ")";
-        if($conn->query($sql) === true){
+  		
+  		$stmt = $conn->prepare('INSERT INTO vets (?) VALUES (?);');
+		if(!$stmt)
+		{
+			die("Connection failed ahhhhhhhh: " . $stmt->connect_error);
+		}
+		$stmt->bind_param('ss', $in1, $in2); // 's' specifies the variable type => 'string'
+		
+		$stmt->execute();
+		
+		$result = $stmt->get_result();
+  		
+  		
+        //$sql = "INSERT INTO " . $table . " (" . $in1 . ") VALUES (" . $in2 . ")";
+        //if($conn->query($sql) === true){
+        if($result){
             echo "Records inserted successfully.";
             return true;
         } else{
@@ -209,7 +223,7 @@ function duplicateCol($val, $cols, $table)
 		die("Connection failed ahhhhhhhh: " . $stmt->connect_error);
 	}
 	$stmt->bind_param('ss', $cols, $val); // 's' specifies the variable type => 'string'
-
+	
 	$stmt->execute();
 	
 	$result = $stmt->get_result();
