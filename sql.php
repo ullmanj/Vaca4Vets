@@ -125,7 +125,7 @@ if(isset($_POST['delc']))
         $in2 = $in2 . $i1[key($i1)];
 echo "Thing1: " . $in1;
 echo "<br>Thing2:" . $in2 . "<br>";
-$conn = new mysqli("localhost", "root", "briggs-test", "V4V");
+		$conn = new mysqli("localhost", "root", "briggs-test", "V4V");
         
         
         
@@ -136,6 +136,7 @@ $conn = new mysqli("localhost", "root", "briggs-test", "V4V");
         if ($conn->connect_error) {
       		die("Connection failed: " . $conn->connect_error);
   		} 
+  		
         $sql = "INSERT INTO " . $table . " (" . $in1 . ") VALUES (" . $in2 . ")";
         if($conn->query($sql) === true){
             echo "Records inserted successfully.";
@@ -161,9 +162,17 @@ function selectCol($colV, $table, $order, $col, $key)
       die("Connection failed: " . $conn->connect_error);
   } 
   
-  $sql = "SELECT *  FROM " . $table . " WHERE " . $col . " = " . $colV . $order;
+  
+  $stmt = $conn->prepare('SELECT *  FROM ? WHERE ? = ? ?');
+	$stmt->bind_param('ssss', $table, $col, $colV, $order); // 's' specifies the variable type => 'string'
+
+	$stmt->execute();
+	
+	$result = $stmt->get_result();
+  
+  /*$sql = "SELECT *  FROM " . $table . " WHERE " . $col . " = " . $colV . $order;
 //  echo $sql;
-  $result = $conn->query($sql);
+  $result = $conn->query($sql);*/
   
   if ($result->num_rows > 0) {
       // output data of each row
@@ -194,18 +203,18 @@ function duplicateCol($val, $cols, $table)
   
   
   
-  /*$stmt = $conn->prepare('SELECT * FROM vets WHERE ? = ?');
-	$stmt->bind_param('ss', $cols, $val); // 's' specifies the variable type => 'string'
+	$stmt = $conn->prepare('SELECT * FROM ? WHERE ? = ?;');
+	$stmt->bind_param('sss', $table, $cols, $val); // 's' specifies the variable type => 'string'
 
 	$stmt->execute();
 	
-	$result = $stmt->get_result();*/
+	$result = $stmt->get_result();
   
   
   
-  $sql = "SELECT *  FROM " . $table . " WHERE " . $cols . " = " . $val . ";";
+  /*$sql = "SELECT *  FROM " . $table . " WHERE " . $cols . " = " . $val . ";";
 //  echo $sql;
-  $result = $conn->query($sql);
+  $result = $conn->query($sql);*/
   $i = false;
   if ($result->num_rows > 0) {
       // output data of each row
