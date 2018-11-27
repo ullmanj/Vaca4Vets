@@ -125,7 +125,7 @@ if(isset($_POST['delc']))
         $in2 = $in2 . $i1[key($i1)];
 echo "Thing1: " . $in1;
 echo "<br>Thing2:" . $in2 . "<br>";
-$mysqli = new mysqli("localhost", "root", "briggs-test", "V4V");
+$conn = new mysqli("localhost", "root", "briggs-test", "V4V");
         
         
         
@@ -133,19 +133,19 @@ $mysqli = new mysqli("localhost", "root", "briggs-test", "V4V");
         
         
         // Check connection
-        if($mysqli === false){
-            die("ERROR: Could not connect. " . $mysqli->connect_error);
-        }
+        if ($conn->connect_error) {
+      		die("Connection failed: " . $conn->connect_error);
+  		} 
         $sql = "INSERT INTO " . $table . " (" . $in1 . ") VALUES (" . $in2 . ")";
-        if($mysqli->query($sql) === true){
+        if($conn->query($sql) === true){
             echo "Records inserted successfully.";
             return true;
         } else{
-            echo "ERROR: Could not able to execute $sql. " . $mysqli->error;
+            echo "ERROR: Could not able to execute $sql. " . $conn->error;
         }
         
         // Close connection
-        $mysqli->close();
+        $conn->close();
         return false;
     }
   //* for all, commas for multiple
@@ -155,7 +155,7 @@ function selectCol($colV, $table, $order, $col, $key)
 {
     //$arr = array();
     //$arr = explode(', ', $cols)
-  $mysqli = new mysqli("localhost", "root", "briggs-test", "V4V"); //root, briggs-test
+  $conn = new mysqli("localhost", "root", "briggs-test", "V4V"); //root, briggs-test
   // Check connection
   if ($conn->connect_error) {
       die("Connection failed: " . $conn->connect_error);
@@ -186,7 +186,7 @@ function duplicateCol($val, $cols, $table)
     
     
     
-  $mysqli = new mysqli("localhost", "root", "briggs-test", "V4V");
+  $conn = new mysqli("localhost", "root", "briggs-test", "V4V");
   // Check connection
   if ($conn->connect_error) {
       die("Connection failed: " . $conn->connect_error);
@@ -220,7 +220,7 @@ function duplicateCol($val, $cols, $table)
 }
 function delRow($table, $val)
   {
-    $mysqli = new mysqli("localhost", "root", "briggs-test", "V4V");
+    $conn = new mysqli("localhost", "root", "briggs-test", "V4V");
   // Check connection
   if ($conn->connect_error) {
       die("Connection failed: " . $conn->connect_error);
