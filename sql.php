@@ -138,13 +138,13 @@ echo "<br>Thing2:" . $in2 . "<br>";
   		} 
   		
   		
-  		$stmt = $conn->prepare('INSERT INTO vets (?) VALUES (?);');
+  		$stmt = $conn->prepare('INSERT INTO vets (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);');
 		if(!$stmt)
 		{
 			die("Connection failed ahhhhhhhh: " . $stmt->connect_error);
 		}
-		$stmt->bind_param('ss', $in1, $in2); // 's' specifies the variable type => 'string'
-		
+		$stmt->bind_param('ssssssssssssssssssssssss', $in1[0], $in1[1], $in1[2], $in1[3], $in1[4], $in1[5], $in1[6], $in1[7], $in1[8], $in1[9], $in1[10], $in1[11], $in2[0], $in2[1], $in2[2], $in2[3], $in2[4], $in2[5], $in2[6], $in2[7], $in2[8], $in2[9], $in2[10], $in2[11]); // 's' specifies the variable type => 'string'
+	
 		$stmt->execute();
 		
 		$result = $stmt->get_result();
