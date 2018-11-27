@@ -204,6 +204,10 @@ function duplicateCol($val, $cols, $table)
   
   
 	$stmt = $conn->prepare('SELECT * FROM ? WHERE ? = ?;');
+	if(!$stmt)
+	{
+		die("Connection failed ahhhhhhhh: " . $stmt->connect_error);
+	}
 	$stmt->bind_param('sss', $table, $cols, $val); // 's' specifies the variable type => 'string'
 
 	$stmt->execute();
