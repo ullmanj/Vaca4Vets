@@ -1,7 +1,5 @@
 <?php
-include_once 'db_connect.php';
-include_once 'psl-config.php';
- 
+
  $mysqli = new mysqli("localhost", "root", "briggs-test", "secure_login");
   // Check connection
   if ($conn->connect_error) {
@@ -25,12 +23,12 @@ include_once 'psl-config.php';
   $conn->close();
  
  
+
+
  
- 
- 
- 
- 
- 
+ /*
+ include_once 'db_connect.php';
+include_once 'psl-config.php';
 if (isset($_POST['firstname'], $_POST['middlename'], $_POST['lastname'], $_POST['rank'], $_POST['branch'], $_POST['aD'], $_POST['email'], $_POST['phone'], $_POST['username'], $_POST['p'])) {
     
     
@@ -151,5 +149,5 @@ if (isset($_POST['firstname'], $_POST['middlename'], $_POST['lastname'], $_POST[
         $error_msg = "YESSSSSSS!!!!!!";
         header('Location: ./home.html');
     }
-}
+}*/
 ?>
