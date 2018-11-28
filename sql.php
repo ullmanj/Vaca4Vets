@@ -138,7 +138,7 @@ echo "<br>Thing2:" . $in2 . "<br>";
   		} 
   		
   		
-  		$stmt = $conn->prepare('INSERT INTO vets (\'idN\', \'first\', \'middle\', \'last\', \'branch\', \'rank\', \'activeD\', \'phoneNum\', \'email\', \'dolcu\', \'username\', \'password\') VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);');
+  		/*$stmt = $conn->prepare('INSERT INTO vets (\'idN\', \'first\', \'middle\', \'last\', \'branch\', \'rank\', \'activeD\', \'phoneNum\', \'email\', \'dolcu\', \'username\', \'password\') VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);');
 		if(!$stmt)
 		{
 			die("Connection failed ahhhhhhhh: ");
@@ -147,11 +147,11 @@ echo "<br>Thing2:" . $in2 . "<br>";
 	
 		$stmt->execute();
 		
-		$result = $stmt->get_result();
+		$result = $stmt->get_result();*/
   		
   		
-        //$sql = "INSERT INTO " . $table . " (" . $in1 . ") VALUES (" . $in2 . ")";
-        //if($conn->query($sql) === true){
+        $sql = "INSERT INTO " . $table . " (" . $in1 . ") VALUES (" . $in2 . ")";
+        if($conn->query($sql) === true){
         if($result){
             echo "Records inserted successfully.";
             return true;
