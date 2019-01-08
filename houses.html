@@ -1,0 +1,42 @@
+<html>
+  <body>
+    <form name="form" action="" method="get">
+      <input type="text" name="location" id="loc" value="zip code">
+    </form>
+    
+    <form name="form" action="" method="get">
+      <input type="text" name="bedrooms" id="beds" value="0">
+    </form>
+        
+    <form name="form" action="" method="get">
+      <input type="text" name="bathrooms" id="baths" value="0">
+    </form>
+    <form name="form" action="" method="get">
+      <input type="text" name="squarefeet" id="sqft" value="0">
+    </form>
+    <form name="form" action="" method="get">
+      <input type="text" name="description" id="desc" value="describe your home">
+    </form>
+  
+    <?php 
+      
+      class House {
+        public $place;
+        public $bedrooms;
+        public $bathrooms;
+        public $sqft;
+        public $desc;
+      }
+      public $housesUp = [];
+    
+      function addHouse($housesUp){
+        $where = <?php echo $_GET['loc']; ?>;
+        $bedrooms = <?php echo $_GET['beds']; ?>;
+        $bathrooms = <?php echo $_GET['baths']; ?>;
+        $sqft = <?php echo $_GET['sqft']; ?>;
+        $desc = <?php echo $_GET['desc']; ?>;
+      }
+      
+      ?>
+    <body>
+</html>

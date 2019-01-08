@@ -49,13 +49,13 @@
       </tr>
     <tr>
     <img class="signup" src="images/grayline.png" alt="gray line" width=300px>
-      <td>Username<br>
+      <td>Username:<br>
       <input type="text" name="username" placeholder="johnAdams3"><br><br>
       </td>
     </tr>
     <tr>
       <td>
-      Password (Must be at least 8 characters:<br>
+      Password (Must be at least 8 characters):<br>
       <input type="password" name="password"><br><br>
       </td>
     </tr>
